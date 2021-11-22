@@ -5,75 +5,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js"></script>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <title>JaxCore</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/core.png" type="image/image">
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="logo">
-            <img src="img/core.png" alt="logo"
-                onclick="window.open('https://github.com/EnhancedJax/-JaxCore', '_blank')">
+    <nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="something navbar-item">
+                <img src="./img/core.png" height="42" width="42">
+            </a>
+            <p class="navbar-item has-text-white">JaxOriginals</p>
+
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
         </div>
-        <ul>
-            <li><a href="/index.html" class="current">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#">Skins</a></li>
-        </ul>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+        </div>
+
+        <div class="navbar-end has-background-black">
+            <div class="navbar-item has-background-black">
+                <a class="navbar-item has-background-black has-text-white">
+                    About
+                </a>
+
+                <a class="navbar-item has-background-black has-text-white">
+                    Download
+                </a>
+
+                <a class="navbar-item has-background-black has-text-white">
+                    Donate
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link  has-background-black has-text-white">
+                        Skins
+                    </a>
+
+                    <div class="navbar-dropdown has-background-black">
+                        <a class="dropdown-btn navbar-item has-text-white has-background-black">
+                            ValliStart
+                        </a>
+                        <a class="dropdown-btn navbar-item has-text-white has-background-black">
+                            QuickNote
+                        </a>
+                        <a class="dropdown-btn navbar-item has-text-white has-background-black">
+                            KeyLaunch
+                        </a>
+                        <a class="dropdown-btn navbar-item has-text-white has-background-black">
+                            IdleStyle
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
     </nav>
-    <div id="main">
-        <div id="home">
-            <div>
-                <h2 class="headings" id="coretitle">JaxOriginals&reg;</h2>
+    <section class="section is-large has-background-black-bis">
+        <div class="columns">
+            <div class="column">
+                <div class="ml-6">
+                    <h1 class="is-size-1 has-text-right has-text-white">JaxCore</h1>
+                    <h2 class="is-size-3 has-text-white has-text-right">
+                        The desktop utilities that you'll need.
+                    </h2>
+                </div>
             </div>
-            <div>
-                <h1 class="headings" id="coresub">Core</h1>
+            <div class="column">
+                <div class="is-centered mx-6">
+                    <img src="./img/core.png">
+                </div>
             </div>
-            <p id="coredesc">
-                JaxCore is an advanced hub for my skins. Core provides easy
-                access to configuration, updates and new releases.
-                Start your adventure of customization and fanciness right here in
-                the Core.
-            </p>
         </div>
-        <div id="limage">
-            <img src="" alt="">
-        </div>
-    </div>
-    <div id="links">
-        <button id="donation"
-            onclick="window.open('https://ko-fi.com/jaxoriginals', 'Jax - KoFi', 'height=500, width=400')">
-            Support me
-        </button>
-        <div class="dbutton" id="github">
-            <img src="img/github.png" alt="github"
-                onclick="window.open('https://github.com/EnhancedJax', 'target=_blank')">
-        </div>
-        <div class="dbutton" id="deviantart">
-            <img src="img/das.png" alt="deviantart"
-                onclick="window.open('https://www.deviantart.com/jaxoriginals', 'target=_blank')">
-        </div>
-    </div>
-    <div id="about">
-        <div id="home">
-            <div>
-                <h2 class="headings" id="coretitle">JaxOriginals&reg;</h2>
+    </section>
+    <section class="section is-medium has-background-grey-darker">
+        <div class="columns is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd is-vcentered">
+            <div class="column is-8">
+                <p class="is-size-1 has-text-white has-text-bold">Desktop utilities that you'll need</p>
+                <p class="is-size-8 has-text-white">Tired of opening notepad to write something down? Wanted to make the
+                    most out of your computer? Wish to get rid of ugly shortcuts on your desktop to make it clean? Core
+                    gotchu covered</p>
             </div>
-            <div>
-                <h1 class="headings" id="coresub">Core</h1>
+            <div class="column">
+                <div class="is-centered is-pulled-right mr-6">
+                    <img src="./img/core.png">
+                </div>
             </div>
-            <p id="coredesc">
-                JaxCore is an advanced hub for my skins. Core provides easy
-                access to configuration, updates and new releases.
-                Start your adventure of customization and fanciness right here in
-                the Core.
-            </p>
         </div>
-        <div id="limage">
-            <img src="" alt="">
-        </div>
-    </div>
+        </h2>
 </body>
 
 </html>

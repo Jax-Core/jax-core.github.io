@@ -1,0 +1,18 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*, *:before, *:after {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-item img {
+    max-height: 10rem;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+    border-color: white;
+}
+
+a.has-background-black:hover {
+    background-color: #242424 !important;
+}
