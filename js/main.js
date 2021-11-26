@@ -33,6 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modularclocks = document.getElementById('ModularClocks');
   modularclocks.addEventListener('click', () => {
-    window.open(`coreinstaller:[!ActivateConfig CoreInstaller][!CommandMeasure DelayedBanger "GetSkin('ModularClocks')"]`)
+    window.location.href = `rm-coreinstaller:[!ActivateConfig CoreInstaller][!CommandMeasure DelayedBanger "GetSkin('ModularClocks')"]`;
   })
 });
