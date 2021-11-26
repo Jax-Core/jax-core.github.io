@@ -30,4 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   navlogo.addEventListener('click', () => {
       window.open(encodeURI('https://github.com/Jax-Core'), 'target=_blank')
   })
+
+  const modularclocks = document.getElementById('ModularClocks');
+  modularclocks.addEventListener('click', () => {
+    window.open(`coreinstaller:[!ActivateConfig CoreInstaller][!CommandMeasure DelayedBanger "GetSkin('ModularClocks')"]`)
+  })
 });
