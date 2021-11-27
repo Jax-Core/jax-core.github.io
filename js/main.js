@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
 	// hamburger
 	// Get all "navbar-burger" elements
 	const $navbarBurgers = Array.prototype.slice.call(
@@ -31,4 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	navlogo.addEventListener('click', () => {
 		window.open(encodeURI('https://jax-core.github.io'), 'target=_blank')
 	})
-});
+	const donation = document.getElementById('donation')
+	donation.addEventListener('click', () => {
+		window.open(
+			'https://ko-fi.com/jaxoriginals',
+			'Jax - KoFi',
+			'height=500, width=400'
+		)
+	})
+})
