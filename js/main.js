@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
 	// hamburger
 	// Get all "navbar-burger" elements
 	const $navbarBurgers = Array.prototype.slice.call(
@@ -20,15 +20,80 @@ document.addEventListener("DOMContentLoaded", () => {
 				el.classList.toggle('is-active')
 				$target.classList.toggle('is-active')
 			})
-			el.addEventListener('touchstart', () => {
-				// el.click();
-			})
 		})
 	}
 
 	// link buttons
 	const navlogo = document.querySelector('.navbar-item img')
 	navlogo.addEventListener('click', () => {
-		window.open(encodeURI('https://jax-core.github.io'), 'target=_blank')
+		window.location.href = 'https://jax-core.github.io'
 	})
-});
+
+	// donation button
+	const donation = document.getElementById('donation')
+	donation.addEventListener('click', () => {
+		window.open(
+			'https://ko-fi.com/jaxoriginals',
+			'Jax - KoFi',
+			'height=500, width=400'
+		)
+	})
+})
+
+//#region scroll animation
+
+let scrollFadeElements = document.querySelectorAll('.scroll-fade')
+
+scrollFadeElements.forEach((element) => {
+	element.style.opacity = 0
+})
+
+const elementInView = (el, percentageScroll = 100) => {
+	const elementTop =
+		el.getBoundingClientRect().top <=
+		(window.innerHeight || document.documentElement.clientHeight) *
+			(percentageScroll / 100)
+	const elementBottom =
+		el.getBoundingClientRect().bottom >
+		(window.innerHeight || document.documentElement.clientHeight) *
+			(1 - percentageScroll / 100)
+
+	return elementTop && elementBottom
+}
+
+const displayScrollElement = (element) => {
+	element.classList.add('in-view')
+}
+
+const hideScrollElement = (element) => {
+	element.classList.remove('in-view')
+}
+
+const scrollProc = () => {
+	scrollFadeElements.forEach((el) => {
+		if (elementInView(el, 85)) {
+			displayScrollElement(el)
+		} else {
+			hideScrollElement(el)
+		}
+	})
+}
+
+let throttleTimer = false
+
+const throttle = (callback, time) => {
+	if (throttleTimer) return
+
+	throttleTimer = true
+
+	setTimeout(() => {
+		callback()
+		throttleTimer = false
+	}, time)
+}
+
+window.addEventListener('scroll', () => {
+	throttle(scrollProc, 50)
+})
+
+//#endregion
