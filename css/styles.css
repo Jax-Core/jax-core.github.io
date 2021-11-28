@@ -90,6 +90,23 @@ a.has-background-transparent:hover {
     border-radius: 0!important;
 }
 
+
+.is-size-1-override{
+    font-size: 4.5rem;
+}
+
+@media screen and (max-width: 769px), print
+{
+    .columns:not(.is-desktop){
+        flex-direction: column;
+        margin: 0!important;
+    }
+
+    .is-size-1-override{
+        font-size: 4rem;
+    }
+}
+
 #herologoback{
     background-image: url('../img/herologobg.svg');
     background-position: center center;
@@ -163,7 +180,7 @@ a.has-background-transparent:hover {
     opacity: 1 !important;
 }
 
-.float-on-hover{
+.animation-float{
     animation-name: float;
     animation-duration: 3000ms;
     animation-iteration-count: infinite;
