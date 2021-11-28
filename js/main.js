@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	navlogo.addEventListener('click', () => {
 		window.open(encodeURI('https://jax-core.github.io'), 'target=_blank')
 	})
+  
+  // donation button
 	const donation = document.getElementById('donation')
 	donation.addEventListener('click', () => {
 		window.open(
