@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// link buttons
 	const navlogo = document.querySelector('.navbar-item img')
 	navlogo.addEventListener('click', () => {
-		window.location.r()
+		window.location.href = 'https://jax-core.github.io'
 	})
 
 	// donation button
@@ -131,4 +131,59 @@ window.addEventListener('scroll', () => {
 	throttle(scrollProc, 50)
 })
 
+//#region scroll animation
+
+let scrollFadeElements = document.querySelectorAll('.scroll-fade')
+
+scrollFadeElements.forEach((element) => {
+	element.style.opacity = 0
+})
+
+const elementInView = (el, percentageScroll = 100) => {
+	const elementTop =
+		el.getBoundingClientRect().top <=
+		(window.innerHeight || document.documentElement.clientHeight) *
+			(percentageScroll / 100)
+	const elementBottom =
+		el.getBoundingClientRect().bottom >
+		(window.innerHeight || document.documentElement.clientHeight) *
+			(1 - percentageScroll / 100)
+
+	return elementTop && elementBottom
+}
+
+const displayScrollElement = (element) => {
+	element.classList.add('in-view')
+}
+
+const hideScrollElement = (element) => {
+	element.classList.remove('in-view')
+}
+
+const scrollProc = () => {
+	scrollFadeElements.forEach((el) => {
+		if (elementInView(el, 85)) {
+			displayScrollElement(el)
+		} else {
+			hideScrollElement(el)
+		}
+	})
+}
+
+let throttleTimer = false
+
+const throttle = (callback, time) => {
+	if (throttleTimer) return
+
+	throttleTimer = true
+
+	setTimeout(() => {
+		callback()
+		throttleTimer = false
+	}, time)
+}
+
+window.addEventListener('scroll', () => {
+	throttle(scrollProc, 50)
+})
 //#endregion
