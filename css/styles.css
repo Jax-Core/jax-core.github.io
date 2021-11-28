@@ -5,6 +5,47 @@
     font-family: 'Poppins', sans-serif;
 }
 
+section{
+    position: relative;
+}
+
+body{
+    background-color: rgb(12,12,12);
+}
+
+#herosectionback{
+    display: block;
+    align-self: stretch;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../img/coreherobg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.7;
+
+    /* mask */
+    mask-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+
+.has-background-transparent{
+    background-color: transparent;
+}
+
+.navbar.has-background-transparent{
+    transition-duration: 400ms;
+}
+
+.navbar.has-background-transparent.scrolled{
+    background-color: rgb(12,12,12);
+}
+
 .is-sticky{
     position: sticky !important;
     top: 0 !important;
@@ -41,27 +82,12 @@
     transition-duration: 400ms;
 }
 
-a.has-background-black:hover {
+a.has-background-transparent:hover {
     background-color: #242424 !important;
 }
 
 .dropdown-btn{
     border-radius: 0!important;
-}
-
-#herosectionback{
-    display: block;
-    align-self: stretch;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("../img/bg.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5
 }
 
 #herologoback{
@@ -84,6 +110,18 @@ a.has-background-black:hover {
     transform: translate(-50%, -50%);
 }
 
+#hero-heading{
+    background: linear-gradient(90deg, #ff220f 0%, #fdc300 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-image{
+    display: inline-block !important;
+    max-height: 171px;
+    max-width: 171px;
+}
 .is-centered-override{
     display: block;
     position: relative;
@@ -123,4 +161,23 @@ a.has-background-black:hover {
 
 .scroll-fade.in-view{
     opacity: 1 !important;
+}
+
+.float-on-hover{
+    animation-name: float;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes float{
+    0%{
+        transform: translate(0, 0px);
+    }
+    50%{
+        transform: translate(0, -10px);
+    }
+    100%{
+        transform: translate(0, 0px);
+    }
 }

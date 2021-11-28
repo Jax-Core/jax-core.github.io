@@ -71,8 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //#region scroll animation
 
+let navScrollElements = document.querySelectorAll(
+	'.navbar.has-background-transparent'
+)
+
 let scrollFadeElements = document.querySelectorAll('.scroll-fade')
 let heroSectionBack = document.querySelector('#herosectionback')
+
+let heroSection = document.querySelector('#herosection')
 
 scrollFadeElements.forEach((element) => {
 	element.style.opacity = 0
@@ -101,9 +107,22 @@ const hideScrollElement = (element) => {
 
 const scrollProc = () => {
 	heroSectionBack.style.opacity =
-		1 *
-		(heroSectionBack.getBoundingClientRect().bottom /
+		0.7 *
+		(heroSection.getBoundingClientRect().bottom /
 			(window.innerHeight || document.documentElement.clientHeight))
+
+	if (
+		heroSection.getBoundingClientRect().bottom <
+		(window.innerHeight || document.documentElement.clientHeight)
+	) {
+		navScrollElements.forEach((el) => {
+			el.classList.add('scrolled')
+		})
+	} else {
+		navScrollElements.forEach((el) => {
+			el.classList.remove('scrolled')
+		})
+	}
 
 	scrollFadeElements.forEach((el) => {
 		if (elementInView(el, 85)) {
@@ -131,4 +150,4 @@ window.addEventListener('scroll', () => {
 	throttle(scrollProc, 50)
 })
 
-//#region scroll animation
+//#endregion
