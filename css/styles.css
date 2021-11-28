@@ -16,6 +16,7 @@
 }
 
 .navbar-item img:hover{
+    cursor: pointer;
     animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
 }
 
@@ -48,6 +49,21 @@ a.has-background-black:hover {
     border-radius: 0!important;
 }
 
+#herosectionback{
+    display: block;
+    align-self: stretch;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../img/bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5
+}
+
 #herologoback{
     background-image: url('../img/herologobg.svg');
     background-position: center center;
@@ -76,12 +92,28 @@ a.has-background-black:hover {
     transform: translate(-50%, -50%);
 }
 
+#download{
+    max-height: 131px;
+    max-width: 131px;
+    border-radius: 10%;
+    background: linear-gradient(90deg, rgba(254,52,26,1) 0%, rgba(254,130,34,1) 100%);
+}
+
+#download:hover{
+    cursor: pointer;
+}
+
 /* For sections with right aligned content */
 @media(max-width: 767px) { 
     .columns-reverse {
         display: flex;
         flex-direction: column-reverse;
     }
+}
+
+.columns-direction-override{
+    display: flex;
+    flex-direction: column;
 }
 
 .scroll-fade{

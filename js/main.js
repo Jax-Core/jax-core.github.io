@@ -1,3 +1,27 @@
+function downloadLatestCore() {
+	let dnld = () =>
+		fetch('https://api.github.com/repos/Jax-Core/-JaxCore/releases/latest')
+			.then((response) => response.json())
+			.then((data) => {
+				data.assets.forEach((asset) => {
+					if (asset.browser_download_url.indexOf('.rmskin') != -1) {
+						window.location.href = asset.browser_download_url
+					}
+				})
+			})
+	if (navigator.userAgent.indexOf('Win') != -1) {
+		dnld()
+	} else {
+		if (
+			confirm(
+				'This is only for Windows devices running Rainmeter desktop customization tool. Download anyway?'
+			)
+		) {
+			dnld()
+		}
+	}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	// hamburger
 	// Get all "navbar-burger" elements
@@ -26,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// link buttons
 	const navlogo = document.querySelector('.navbar-item img')
 	navlogo.addEventListener('click', () => {
-		window.location.href = 'https://jax-core.github.io'
+		window.location.r()
 	})
 
 	// donation button
@@ -38,11 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			'height=500, width=400'
 		)
 	})
+
+	// download button
+	document
+		.querySelectorAll('.coredownload')
+		.forEach((el) => el.addEventListener('click', downloadLatestCore))
 })
 
 //#region scroll animation
 
 let scrollFadeElements = document.querySelectorAll('.scroll-fade')
+let heroSectionBack = document.querySelector('#herosectionback')
 
 scrollFadeElements.forEach((element) => {
 	element.style.opacity = 0
@@ -70,6 +100,11 @@ const hideScrollElement = (element) => {
 }
 
 const scrollProc = () => {
+	heroSectionBack.style.opacity =
+		1 *
+		(heroSectionBack.getBoundingClientRect().bottom /
+			(window.innerHeight || document.documentElement.clientHeight))
+
 	scrollFadeElements.forEach((el) => {
 		if (elementInView(el, 85)) {
 			displayScrollElement(el)
