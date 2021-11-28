@@ -5,6 +5,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.is-sticky{
+    position: sticky !important;
+    top: 0 !important;
+    bottom: 0 !important;
+}
+
 .navbar-item img {
     max-height: 10rem;
 }
@@ -68,4 +74,21 @@ a.has-background-black:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* For sections with right aligned content */
+@media(max-width: 767px) { 
+    .columns-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+.scroll-fade{
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.scroll-fade.in-view{
+    opacity: 1 !important;
 }
