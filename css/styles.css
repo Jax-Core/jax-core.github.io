@@ -95,7 +95,7 @@ a.has-background-transparent:hover {
     font-size: 4.5rem;
 }
 
-@media screen and (max-width: 769px), print
+@media screen and (max-width: 768px), print
 {
     .columns:not(.is-desktop){
         flex-direction: column;
@@ -104,6 +104,10 @@ a.has-background-transparent:hover {
 
     .is-size-1-override{
         font-size: 4rem;
+    }
+
+    .mt-3-mobile{
+        margin-top: 3rem;
     }
 }
 
@@ -148,21 +152,23 @@ a.has-background-transparent:hover {
 }
 
 #download{
-    max-height: 131px;
-    max-width: 131px;
+    max-height: 7.5625rem;
+    max-width: 7.5625rem;
     border-radius: 10%;
     background: linear-gradient(90deg, rgba(254,52,26,1) 0%, rgba(254,130,34,1) 100%);
+    transition-duration: 400ms;
 }
 
 #download:hover{
     cursor: pointer;
+    transform: scale(1.1, 1.1);
 }
 
 /* For sections with right aligned content */
 @media(max-width: 767px) { 
     .columns-reverse {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column-reverse !important;
     }
 }
 
