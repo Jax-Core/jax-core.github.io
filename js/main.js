@@ -1,11 +1,31 @@
 function downloadLatestCore() {
     Swal.fire({
         title: 'Thanks for downloading JaxCore!',
-        html: 'Consider joining our <a href="https://discord.gg/JmgehPSDD6"> Discord </a> too!',
+        html: 'Need more help?',
         imageUrl: '../img/core.png',
         imageWidth: 128,
         imageHeight: 128,
-    })
+        background: '#181a1b',
+        showDenyButton: true,
+        confirmButtonColor: '#5865F2',
+        confirmButtonText: 'Join our Discord!',
+        denyButtonColor: '#103b74',
+        denyButtonText: 'How to use JaxCore',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.open('https://discord.gg/JmgehPSDD6', '_blank');
+            Swal.close();
+        }
+        else {
+            Swal.fire({
+                title: 'How to use JaxCore',
+                html: 'WIP',
+                background: '#181a1b',
+                confirmButtonColor: '#fe341a',
+                confirmButtonText: 'Got it!',
+            })
+        }
+    });
 	let dnld = () =>
 		fetch('https://api.github.com/repos/Jax-Core/-JaxCore/releases/latest')
 			.then((response) => response.json())
