@@ -1,4 +1,11 @@
 function downloadLatestCore() {
+    Swal.fire({
+        title: 'Thanks for downloading JaxCore!',
+        html: 'Consider joining our <a href="https://discord.gg/JmgehPSDD6"> Discord </a> too!',
+        imageUrl: '../img/core.png',
+        imageWidth: 128,
+        imageHeight: 128,
+    })
 	let dnld = () =>
 		fetch('https://api.github.com/repos/Jax-Core/-JaxCore/releases/latest')
 			.then((response) => response.json())
