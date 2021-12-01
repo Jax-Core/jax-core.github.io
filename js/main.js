@@ -1,31 +1,28 @@
+function PopUp() {
+	Swal.fire({
+		title: '<p class=hero-heading style="color: #ffffff">Thanks for downloading JaxCore!</p>',
+		html: 'Need more help?',
+		imageUrl: '../img/core.png',
+		imageWidth: 128,
+		imageHeight: 128,
+		background: '#181a1b',
+		showDenyButton: true,
+		confirmButtonColor: '#fe5721',
+		confirmButtonText: 'Read the Wiki',
+		denyButtonColor: '#5865F2',
+		denyButtonText: 'Join our Discord',
+	}).then((result) => {
+		if (result.isConfirmed) {
+			window.open('https://github.com/Jax-Core/JaxCore/wiki', '_blank')
+			Swal.close()
+		} else if (result.isDenied) {
+			window.open('https://discord.gg/JmgehPSDD6', '_blank')
+			Swal.close()
+		}
+	})
+}
+
 function downloadLatestCore() {
-    Swal.fire({
-        title: 'Thanks for downloading JaxCore!',
-        html: 'Need more help?',
-        imageUrl: '../img/core.png',
-        imageWidth: 128,
-        imageHeight: 128,
-        background: '#181a1b',
-        showDenyButton: true,
-        confirmButtonColor: '#5865F2',
-        confirmButtonText: 'Join our Discord!',
-        denyButtonColor: '#103b74',
-        denyButtonText: 'How to use JaxCore',
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.open('https://discord.gg/JmgehPSDD6', '_blank');
-            Swal.close();
-        }
-        else {
-            Swal.fire({
-                title: 'How to use JaxCore',
-                html: 'WIP',
-                background: '#181a1b',
-                confirmButtonColor: '#fe341a',
-                confirmButtonText: 'Got it!',
-            })
-        }
-    });
 	let dnld = () =>
 		fetch('https://api.github.com/repos/Jax-Core/-JaxCore/releases/latest')
 			.then((response) => response.json())
@@ -38,14 +35,24 @@ function downloadLatestCore() {
 			})
 	if (navigator.userAgent.indexOf('Win') != -1) {
 		dnld()
+		PopUp()
 	} else {
-		if (
-			confirm(
-				'This is only for Windows devices running Rainmeter desktop customization tool. Download anyway?'
-			)
-		) {
-			dnld()
-		}
+		Swal.fire({
+			title: '<p style="color: #facea8">Incompatible Device</p>',
+			html: 'JaxCore is intended for Windows devices. Download anyway?',
+			icon: 'warning',
+			imageWidth: 128,
+			imageHeight: 128,
+			background: '#181a1b',
+			showDenyButton: true,
+			confirmButtonText: 'Download',
+			denyButtonText: 'Cancel',
+		}).then((result) => {
+			if (result.isConfirmed) {
+				dnld()
+				Swal.close()
+			}
+		})
 	}
 }
 

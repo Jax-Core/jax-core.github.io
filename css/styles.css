@@ -131,7 +131,7 @@ a.has-background-transparent:hover {
     transform: translate(-50%, -50%);
 }
 
-#hero-heading{
+.hero-heading{
     background: linear-gradient(90deg, #ff220f 0%, #fdc300 100%);
     -webkit-background-clip: text;
     background-clip: text;
