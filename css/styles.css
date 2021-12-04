@@ -126,8 +126,8 @@ a.has-background-transparent:hover {
 #herologo{
     display: block;
     position: relative;
-    top: 55%;
-    left: 40%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
