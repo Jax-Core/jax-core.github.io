@@ -140,8 +140,8 @@ a.has-background-transparent:hover {
 
 .section-image{
     display: inline-block !important;
-    max-height: 171px;
-    max-width: 171px;
+    max-height: 10.688rem;
+    max-width: 10.688rem;
 }
 .is-centered-override{
     display: block;
