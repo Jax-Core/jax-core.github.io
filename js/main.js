@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// link buttons
-	const navlogo = document.querySelector('.navbar-item img')
-	navlogo.addEventListener('click', () => {
-		window.location.href = 'https://jax-core.github.io'
-	})
+	const navlogo = document
+		.querySelector('.navbar-item img')
+		.addEventListener('click', () => {
+			window.location.href = 'https://jax-core.github.io'
+		})
 
 	// donation button
-	const donation = document.getElementById('donation')
-	donation.addEventListener('click', () => {
+	document.getElementById('donation').addEventListener('click', () => {
 		window.open(
 			'https://ko-fi.com/jaxoriginals',
 			'Jax - KoFi',
@@ -101,6 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	document
 		.querySelectorAll('.coredownload')
 		.forEach((el) => el.addEventListener('click', downloadLatestCore))
+})
+
+// hero first button
+document.getElementById('btn-faq').addEventListener('click', () => {
+	window.location.href = '#about'
+})
+
+// hero second button
+document.getElementById('btn-dl').addEventListener('click', () => {
+	downloadLatestCore()
 })
 
 //#region scroll animation

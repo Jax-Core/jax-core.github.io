@@ -1,217 +1,246 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+@import 'https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-*, *:before, *:after {
-    font-family: 'Poppins', sans-serif;
+*,
+*:before,
+*:after {
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
 }
 
-section{
-    position: relative;
+section {
+	position: relative;
 }
 
-body{
-    background-color: rgb(12,12,12);
+body {
+	background-color: rgb(12, 12, 12);
 }
 
-#herosectionback{
-    display: block;
-    align-self: stretch;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    background-image: url("../img/coreherobg.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.7;
+#herosectionback {
+	display: block;
+	align-self: stretch;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	background-image: url('../img/coreherobg.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.7;
 
-    /* mask */
-    mask-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
-    -webkit-mask-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0));
+	/* mask */
+	mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+	-webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
-
-.has-background-transparent{
-    background-color: transparent;
+.has-background-transparent {
+	background-color: transparent;
 }
 
-.navbar.has-background-transparent{
-    transition-duration: 400ms;
+.navbar.has-background-transparent {
+	transition-duration: 400ms;
 }
 
-.navbar.has-background-transparent.scrolled{
-    background-color: rgb(12,12,12);
+.navbar.has-background-transparent.scrolled {
+	background-color: rgb(12, 12, 12);
 }
 
-.is-sticky{
-    position: sticky !important;
-    top: 0 !important;
-    bottom: 0 !important;
+.is-sticky {
+	position: sticky !important;
+	top: 0 !important;
+	bottom: 0 !important;
 }
 
 .navbar-item img {
-    max-height: 10rem;
+	max-height: 10rem;
 }
 
-.navbar-item img:hover{
-    cursor: pointer;
-    animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
+.navbar-item img:hover {
+	cursor: pointer;
+	animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
 }
 
-@keyframes coreanim{
-    0%{
-        transform: rotate(360deg);
-    }
-    80%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
+@keyframes coreanim {
+	0% {
+		transform: rotate(360deg);
+	}
+	80% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
 
 .navbar-link:not(.is-arrowless)::after {
-    border-color: white;
+	border-color: white;
 }
 
-.navbar a{
-    border-radius: 0.3rem;
-    transition-duration: 400ms;
+.navbar a {
+	border-radius: 0.3rem;
+	transition-duration: 400ms;
 }
 
 a.has-background-transparent:hover {
-    background-color: #242424 !important;
+	background-color: #242424 !important;
 }
 
-.dropdown-btn{
-    border-radius: 0!important;
+.dropdown-btn {
+	border-radius: 0 !important;
 }
 
-
-.is-size-1-override{
-    font-size: 4.5rem;
+.is-size-1-override {
+	font-size: 4.5rem;
 }
 
-@media screen and (max-width: 768px), print
-{
-    .columns:not(.is-desktop){
-        flex-direction: column;
-        margin: 0!important;
-    }
+@media screen and (max-width: 768px), print {
+	.columns:not(.is-desktop) {
+		flex-direction: column;
+		margin: 0 !important;
+	}
 
-    .is-size-1-override{
-        font-size: 4rem;
-    }
+	.is-size-1-override {
+		font-size: 4rem;
+	}
 
-    .mt-3-mobile{
-        margin-top: 3rem;
-    }
+	.mt-3-mobile {
+		margin-top: 3rem;
+	}
 }
 
-#herologoback{
-    background-image: url('../img/herologobg.svg');
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+#herologoback {
+	background-image: url('../img/herologobg.svg');
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
-.rounded-image{
-    display: inline-block !important;
-    border-radius: 50%;
+.rounded-image {
+	display: inline-block !important;
+	border-radius: 50%;
 }
 
-#herologo{
-    display: block;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#herologo {
+	display: block;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.hero-heading{
-    background: linear-gradient(90deg, #ff220f 0%, #fdc300 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+.hero-heading {
+	background: linear-gradient(90deg, #ff220f 0%, #fdc300 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
-.section-image{
-    display: inline-block !important;
-    max-height: 10.688rem;
-    max-width: 10.688rem;
+.section-image {
+	display: inline-block !important;
+	max-height: 10.688rem;
+	max-width: 10.688rem;
 }
-.is-centered-override{
-    display: block;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#download{
-    max-height: 7.5625rem;
-    max-width: 7.5625rem;
-    border-radius: 10%;
-    background: linear-gradient(90deg, rgba(254,52,26,1) 0%, rgba(254,130,34,1) 100%);
-    transition-duration: 400ms;
+.is-centered-override {
+	display: block;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-#download:hover{
-    cursor: pointer;
-    transform: scale(1.1, 1.1);
+#download {
+	max-height: 7.5625rem;
+	max-width: 7.5625rem;
+	border-radius: 10%;
+	background: linear-gradient(
+		90deg,
+		rgba(254, 52, 26, 1) 0%,
+		rgba(254, 130, 34, 1) 100%
+	);
+	transition-duration: 400ms;
+}
+
+#download:hover {
+	cursor: pointer;
+	transform: scale(1.1, 1.1);
 }
 
 /* For sections with right aligned content */
-@media(max-width: 767px) { 
-    .columns-reverse {
-        display: flex;
-        flex-direction: column-reverse !important;
-    }
+@media (max-width: 767px) {
+	.columns-reverse {
+		display: flex;
+		flex-direction: column-reverse !important;
+	}
 }
 
-.columns-direction-override{
-    display: flex;
-    flex-direction: column;
+.columns-direction-override {
+	display: flex;
+	flex-direction: column;
 }
 
-.scroll-fade{
-    transition-duration: 500ms;
-    transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+.scroll-fade {
+	transition-duration: 500ms;
+	transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
 }
 
-.scroll-fade.in-view{
-    opacity: 1 !important;
+.scroll-fade.in-view {
+	opacity: 1 !important;
 }
 
-.animation-float{
-    animation-name: float;
-    animation-duration: 3000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+.animation-float {
+	animation-name: float;
+	animation-duration: 3000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
 }
 
-@keyframes float{
-    0%{
-        transform: translate(0, 0px);
-    }
-    50%{
-        transform: translate(0, -10px);
-    }
-    100%{
-        transform: translate(0, 0px);
-    }
+@keyframes float {
+	0% {
+		transform: translate(0, 0px);
+	}
+	50% {
+		transform: translate(0, -10px);
+	}
+	100% {
+		transform: translate(0, 0px);
+	}
+}
+
+.btn-faq,
+.btn-dl {
+	color: white;
+	margin-top: 30px;
+	border-radius: 5px;
+	border: none;
+	transition-duration: 400ms;
+}
+
+.btn-faq {
+	background-color: #ff220f;
+	margin-right: 9px;
+}
+
+.btn-dl {
+	background-color: #fdc300;
+	margin-left: 9px;
+}
+
+.btn-dl:hover,
+.btn-faq:hover {
+	transform: scale(1.1, 1.1);
+	color: white;
 }
 
 /* Sniped from stack overflow, disables text selection */
 .no-select {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
