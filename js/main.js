@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // hero first button
 document.getElementById('btn-faq').addEventListener('click', () => {
-	window.location.href = '#about'
+	window.location.href = 'https://jax-core.github.io/skins'
 })
 
 // hero second button
