@@ -37,7 +37,7 @@ body {
 }
 
 .has-background-transparent {
-	background-color: transparent;
+	background-color: transparent !important;
 }
 
 .navbar.has-background-transparent {
@@ -86,6 +86,10 @@ body {
 
 a.has-background-transparent:hover {
 	background-color: #242424 !important;
+}
+
+a.has-background-transparent:active{
+    background-color: #333333 !important;
 }
 
 .dropdown-btn {
@@ -225,7 +229,7 @@ a.has-background-transparent:hover {
 }
 
 .btn-dl {
-	background-color: #feb002;
+	background-color: #ff9100;
 }
 
 .btn-dl:hover,
