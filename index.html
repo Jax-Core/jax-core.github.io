@@ -1,254 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="twitter:title" content="EnhancedJax - JaxCore" />
+		<meta
+			name="twitter:description"
+			content="Your go to for desktop customization"
+		/>
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta
+			name="twitter:image"
+			content="https://raw.githubusercontent.com/deathcrafter/RainRepo/main/jaxcore.png"
+		/>
+		<meta property="og:title" content="JaxCore" />
+		<meta
+			property="og:image"
+			content="https://raw.githubusercontent.com/deathcrafter/RainRepo/main/jaxcore.png"
+		/>
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1339" />
+		<meta property="og:image:height" content="622" />
+		<meta property="og:image:alt" content="A shiny image of JaxCore" />
+		<!-- <link rel="stylesheet" href="css/debug.css"> -->
+		<link rel="stylesheet" href="css/styles.css" />
+		<link rel="icon" href="img/core.png" type="image/png" />
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<title>JaxCore for Rainmeter</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="twitter:title" content="EnhancedJax - JaxCore" />
-    <meta name="twitter:description" content="Your go to for desktop customization" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/deathcrafter/RainRepo/main/jaxcore.png" />
-    <meta property="og:title" content="JaxCore" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/deathcrafter/RainRepo/main/jaxcore.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1339" />
-    <meta property="og:image:height" content="622" />
-    <meta property="og:image:alt" content="A shiny image of JaxCore" />
-    <!-- <link rel="stylesheet" href="css/debug.css"> -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="img/core.png" type="image/png" />
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>JaxCore for Rainmeter</title>
-</head>
+	<body class="no-select">
+		<div id="herosectionback"></div>
+		<nav
+			class="navbar has-background-transparent is-sticky"
+			aria-label="main navigation"
+		>
+			<div class="navbar-brand has-background-transparent">
+				<a class="navbar-item">
+					<img
+						id="nav-logo"
+						src="img/core.png"
+						height="42"
+						width="42"
+						alt="core logo"
+					/>
+				</a>
+				<p class="navbar-item has-text-white">JaxOriginals</p>
 
-<body class="no-select">
-    <div id="herosectionback"></div>
-    <nav class="navbar has-background-transparent is-sticky" aria-label="main navigation">
-        <div class="navbar-brand has-background-transparent">
-            <a class="navbar-item">
-                <img id="nav-logo" src="img/core.png" height="42" width="42" alt="core logo" />
-            </a>
-            <p class="navbar-item has-text-white">JaxOriginals</p>
+				<a
+					role="button"
+					class="navbar-burger"
+					aria-label="menu"
+					aria-expanded="false"
+					data-target="navbarBasicExample"
+				>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu navbar-end has-background-transparent">
-            <div class="navbar-item has-background-transparent">
-                <a class="
+			<div
+				id="navbarBasicExample"
+				class="navbar-menu navbar-end has-background-transparent"
+			>
+				<div class="navbar-item has-background-transparent">
+					<a
+						class="
 							navbar-item
 							has-background-transparent has-text-white
 							m-1
-						" href="https://jax-core.github.io">
-                    Home
-                </a>
+						"
+						href="https://jax-core.github.io"
+					>
+						Home
+					</a>
 
-                <a class="
+					<a
+						class="
 							navbar-item
 							has-background-transparent has-text-white
 							m-1
-						" href="https://jax-core.github.io/skins">
-                    Skins
-                </a>
+						"
+						href="https://jax-core.github.io/skins"
+					>
+						Skins
+					</a>
 
-                <a class="
+					<a
+						class="
 							navbar-item
 							has-background-transparent has-text-white
 							m-1
-						" href="https://jax-core.github.io/faq">
-                    FAQ
-                </a>
+						"
+						href="https://jax-core.github.io/faq"
+					>
+						FAQ
+					</a>
 
-                <a class="
+					<a
+						class="
 							navbar-item
 							has-background-transparent has-text-white
 							m-1
-						" id="donation">
-                    Donate
-                </a>
-            </div>
-        </div>
-    </nav>
+						"
+						id="donation"
+					>
+						Donate
+					</a>
+				</div>
+			</div>
+		</nav>
 
-    <!-- Hero Section -->
-    <section class="
+		<!-- Hero Section -->
+		<section
+			class="
 				hero
 				has-align-items-center
 				is-fullheight-with-navbar
 				has-background-transparent
-			" id="herosection" style="position: relative">
-        <div class="columns is-vcentered hero-body m-6">
-            <div class="column has-text-left">
-                <div style="display: inline-block">
-                    <h1 class="
+			"
+			id="herosection"
+			style="position: relative"
+		>
+			<div class="columns is-vcentered hero-body m-6">
+				<div class="column has-text-left">
+					<div style="display: inline-block">
+						<h1
+							class="
 								is-size-1-override
 								has-text-left has-text-centered-mobile
-							">
-                        <strong class="has-text-white hero-heading">JaxCore</strong>
-                    </h1>
-                    <h2 class="
+							"
+						>
+							<strong class="has-text-white hero-heading"
+								>JaxCore</strong
+							>
+						</h1>
+						<h2
+							class="
 								is-size-4 is-size-5-mobile
 								has-text-left
 								has-text-centered-mobile
 								has-text-white
-							">
-                        The desktop utilities that you'll need.
-                    </h2>
-                </div>
-                <br />
-                <div class="button btn-faq is-pulled-left" style="display: inline-block" id="btn-faq">
-                    What's this?
-                </div>
-                <div class="button btn-dl is-pulled-left" style="display: inline-block" id="btn-dl">
-                    Download now
-                </div>
-            </div>
-            <div class="column">
-                <div class="has-text-right has-text-centered-mobile">
-                    <figure class="animation-float" id="herologoback" style="
+							"
+						>
+							The desktop utilities that you'll need.
+						</h2>
+					</div>
+					<br />
+					<div class="columns is-mobile mt-4" id="main-section-buttons">
+						<div class="column is-narrow">
+							<button
+								class="btn-faq p-2"
+								id="btn-faq"
+							>
+								What's this?
+                            </button>
+						</div>
+						<div class="column is-narrow">
+							<button
+								class="btn-dl p-2"
+								id="btn-dl"
+							>
+								Download now
+                            </button>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="has-text-right has-text-centered-mobile">
+						<figure
+							class="animation-float"
+							id="herologoback"
+							style="
 								display: inline-block;
 								position: relative;
 								height: 18.3125rem;
 								width: 12.375rem;
-							">
-                        <img id="herologo" src="./img/core.png" style="height: 12.25rem; width: 12.25rem"
-                            alt="hero logo" />
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
+							"
+						>
+							<img
+								id="herologo"
+								src="./img/core.png"
+								style="height: 12.25rem; width: 12.25rem"
+								alt="hero logo"
+							/>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Section 1 -->
-    <section class="section is-medium has-background-transparent" id="about">
-        <div class="columns is-vcentered scroll-fade m-6">
-            <div class="column is-full-mobile is-two-thirds">
-                <h1 class="
+		<!-- Section 1 -->
+		<section
+			class="section is-medium has-background-transparent"
+			id="about"
+		>
+			<div class="columns is-vcentered scroll-fade m-6">
+				<div class="column is-full-mobile is-two-thirds">
+					<h1
+						class="
 							is-size-2 is-size-3-mobile
 							has-text-left has-text-centered-mobile
-						">
-                    <strong class="has-text-white">Desktop utilities that you'll need</strong>
-                </h1>
-                <p class="
+						"
+					>
+						<strong class="has-text-white"
+							>Desktop utilities that you'll need</strong
+						>
+					</h1>
+					<p
+						class="
 							is-size-8 is-size-9-mobile
 							has-text-left
 							has-text-centered-mobile
 							has-text-white
-						">
-                    Getting tired of opening a notepad to jot down notes? Want to get the most out of your computer? Are
-                    you tired of the clutter on your desktop? Do you wish to delete those ugly shortcuts? Core has got
-                    you covered.
-                </p>
-            </div>
-            <div class="column is-full-mobile is-one-third">
-                <div class="
+						"
+					>
+						Getting tired of opening a notepad to jot down notes?
+						Want to get the most out of your computer? Are you tired
+						of the clutter on your desktop? Do you wish to delete
+						those ugly shortcuts? Core has got you covered.
+					</p>
+				</div>
+				<div class="column is-full-mobile is-one-third">
+					<div
+						class="
 							has-text-right has-text-centered-mobile
 							mt-3-mobile
-						">
-                    <figure class="image" style="display: inline-block">
-                        <img class="section-image animation-float" src="./img/section1.png" alt="section logo" />
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
+						"
+					>
+						<figure class="image" style="display: inline-block">
+							<img
+								class="section-image animation-float"
+								src="./img/section1.png"
+								alt="section logo"
+							/>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Section 2 -->
-    <section class="section is-medium has-background-transparent">
-        <div class="columns columns-reverse is-vcentered scroll-fade m-6">
-            <div class="column is-full-mobile is-one-third">
-                <div class="
+		<!-- Section 2 -->
+		<section class="section is-medium has-background-transparent">
+			<div class="columns columns-reverse is-vcentered scroll-fade m-6">
+				<div class="column is-full-mobile is-one-third">
+					<div
+						class="
 							has-text-left has-text-centered-mobile
 							mt-3-mobile
-						">
-                    <figure class="image" style="display: inline-block">
-                        <img class="section-image animation-float" src="./img/section2.png" alt="section logo" />
-                    </figure>
-                </div>
-            </div>
-            <div class="column is-full-mobile is-two-thirds">
-                <h1 class="
+						"
+					>
+						<figure class="image" style="display: inline-block">
+							<img
+								class="section-image animation-float"
+								src="./img/section2.png"
+								alt="section logo"
+							/>
+						</figure>
+					</div>
+				</div>
+				<div class="column is-full-mobile is-two-thirds">
+					<h1
+						class="
 							is-size-2 is-size-3-mobile
 							has-text-right has-text-centered-mobile
-						">
-                    <strong class="has-text-white">Customization made easy</strong>
-                </h1>
-                <p class="
+						"
+					>
+						<strong class="has-text-white"
+							>Customization made easy</strong
+						>
+					</h1>
+					<p
+						class="
 							is-size-8 is-size-9-mobile
 							has-text-right
 							has-text-centered-mobile
 							has-text-white
-						">
-                    With a dedicated configuration menu for each skin, Core makes customizing easier for new users. You
-                    do not need to edit any code!
-                </p>
-            </div>
-        </div>
-    </section>
+						"
+					>
+						With a dedicated configuration menu for each skin, Core
+						makes customizing easier for new users. You do not need
+						to edit any code!
+					</p>
+				</div>
+			</div>
+		</section>
 
-    <!-- Section 3 -->
-    <section class="section is-medium has-background-transparent">
-        <div class="columns is-vcentered scroll-fade m-6">
-            <div class="column is-full-mobile is-two-thirds">
-                <h1 class="
+		<!-- Section 3 -->
+		<section class="section is-medium has-background-transparent">
+			<div class="columns is-vcentered scroll-fade m-6">
+				<div class="column is-full-mobile is-two-thirds">
+					<h1
+						class="
 							is-size-2 is-size-3-mobile
 							has-text-left has-text-centered-mobile
-						">
-                    <strong class="has-text-white">Updates are more accessible than ever</strong>
-                </h1>
-                <p class="
+						"
+					>
+						<strong class="has-text-white"
+							>Updates are more accessible than ever</strong
+						>
+					</h1>
+					<p
+						class="
 							is-size-8 is-size-9-mobile
 							has-text-left
 							has-text-centered-mobile
 							has-text-white
-						">
-                    You will never miss out on any new features or bug fixes. Core can notify you when there are updates
-                    to skins that you've installed, you can update skins just by clicking your mouse; no manual download
-                    is necessary.
-                </p>
-            </div>
-            <div class="column is-full-mobile is-one-third">
-                <div class="
+						"
+					>
+						You will never miss out on any new features or bug
+						fixes. Core can notify you when there are updates to
+						skins that you've installed, you can update skins just
+						by clicking your mouse; no manual download is necessary.
+					</p>
+				</div>
+				<div class="column is-full-mobile is-one-third">
+					<div
+						class="
 							has-text-right has-text-centered-mobile
 							mt-3-mobile
-						">
-                    <figure class="image" style="display: inline-block">
-                        <img class="section-image animation-float" src="./img/section3.png" alt="section logo" />
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
+						"
+					>
+						<figure class="image" style="display: inline-block">
+							<img
+								class="section-image animation-float"
+								src="./img/section3.png"
+								alt="section logo"
+							/>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Download -->
-    <section class="section is-medium has-background-transparent">
-        <div class="
+		<!-- Download -->
+		<section class="section is-medium has-background-transparent">
+			<div
+				class="
 					columns
 					is-vcentered
 					scroll-fade
 					columns-direction-override
-				">
-            <div class="column is-full-mobile is-two-thirds">
-                <h1 class="is-size-3 is-size-4-mobile has-text-centered">
-                    <strong class="has-text-white">Ready to spice up your desktop?</strong>
-                </h1>
-            </div>
-            <div class="column is-narrow">
-                <div class="has-text-centered mt-4">
-                    <figure class="image has-text-centered">
-                        <img class="p-5 coredownload" src="./img/download.svg" id="download" alt="download svg" />
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-    <script src="js/main.js"></script>
-</body>
-
+				"
+			>
+				<div class="column is-full-mobile is-two-thirds">
+					<h1 class="is-size-3 is-size-4-mobile has-text-centered">
+						<strong class="has-text-white"
+							>Ready to spice up your desktop?</strong
+						>
+					</h1>
+				</div>
+				<div class="column is-narrow">
+					<div class="has-text-centered mt-4">
+						<figure class="image has-text-centered">
+							<img
+								class="p-5 coredownload"
+								src="./img/download.svg"
+								id="download"
+								alt="download svg"
+							/>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="js/main.js"></script>
+	</body>
 </html>
