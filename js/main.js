@@ -155,10 +155,7 @@ const scrollProc = () => {
 		(heroSection.getBoundingClientRect().bottom /
 			(window.innerHeight || document.documentElement.clientHeight))
 
-	if (
-		heroSection.getBoundingClientRect().bottom <
-		(window.innerHeight || document.documentElement.clientHeight)
-	) {
+	if (document.querySelector('body').getBoundingClientRect().top < 0) {
 		navScrollElements.forEach((el) => {
 			el.classList.add('scrolled')
 		})
