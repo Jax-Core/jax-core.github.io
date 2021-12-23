@@ -4,3 +4,4 @@
 - death: Added animation to navbar logo, hover effects to navbar links and dropdown.
 - death: Reworked the top section
     - Pending approval from others.
+- death: Did I fuck up?
