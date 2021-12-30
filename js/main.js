@@ -24,7 +24,7 @@ function PopUp() {
 
 function downloadLatestCore() {
 	let dnld = () =>
-		fetch('https://api.github.com/repos/Jax-Core/-JaxCore/releases/latest')
+		fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
 			.then((response) => response.json())
 			.then((data) => {
 				data.assets.forEach((asset) => {
@@ -34,7 +34,7 @@ function downloadLatestCore() {
 				})
 			})
 	if (navigator.userAgent.indexOf('Win') != -1) {
-		dnld()
+		window.location.href = 'https://github.com/Jax-Core/JaxCore/releases/download/v40000/JaxCore.zip'
 		PopUp()
 	} else {
 		Swal.fire({
