@@ -34,7 +34,7 @@ function downloadLatestCore() {
 				})
 			})
 	if (navigator.userAgent.indexOf('Win') != -1) {
-		window.location.href = 'https://github.com/Jax-Core/JaxCore/releases/download/v40000/JaxCore.zip'
+		window.location.href = 'https://github.com/Jax-Core/JaxCore/releases/download/v40000/JaxCore_v40000.rmskin'
 		PopUp()
 	} else {
 		Swal.fire({
