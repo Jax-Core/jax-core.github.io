@@ -24,7 +24,7 @@ function PopUp() {
 
 function downloadLatestCore() {
 	let dnld = () =>
-		fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
+		fetch('https://api.github.com/repos/Jax-Core/-JaxCore/releases/latest')
 			.then((response) => response.json())
 			.then((data) => {
 				data.assets.forEach((asset) => {
@@ -34,7 +34,7 @@ function downloadLatestCore() {
 				})
 			})
 	if (navigator.userAgent.indexOf('Win') != -1) {
-		window.location.href = 'https://github.com/Jax-Core/JaxCore/releases/download/v40000/JaxCore_v40000.rmskin'
+		dnld()
 		PopUp()
 	} else {
 		Swal.fire({
@@ -132,11 +132,11 @@ const elementInView = (el, percentageScroll = 100) => {
 	const elementTop =
 		el.getBoundingClientRect().top <=
 		(window.innerHeight || document.documentElement.clientHeight) *
-			(percentageScroll / 100)
+		(percentageScroll / 100)
 	const elementBottom =
 		el.getBoundingClientRect().bottom >
 		(window.innerHeight || document.documentElement.clientHeight) *
-			(1 - percentageScroll / 100)
+		(1 - percentageScroll / 100)
 
 	return elementTop && elementBottom
 }
