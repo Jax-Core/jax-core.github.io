@@ -24,7 +24,7 @@ function PopUp() {
 
 function downloadLatestCore() {
 	let dnld = () =>
-		fetch('https://api.github.com/repos/Jax-Core/-JaxCore/releases/latest')
+		fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
 			.then((response) => response.json())
 			.then((data) => {
 				data.assets.forEach((asset) => {
