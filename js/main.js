@@ -25,7 +25,7 @@ function PopUp() {
 
 function downloadLatestCore() {
 	let dnld = () =>
-		window.location.href = "https://github.com/Jax-Core/jax-core.github.io/releases/download/v1/JaxCore_PSInstaller.exe"
+		window.location.href = "https://github.com/Jax-Core/jax-core.github.io/releases/download/v1/JaxCoreSetup.exe"
 		// fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
 		// 	.then((response) => response.json())
 		// 	.then((data) => {
