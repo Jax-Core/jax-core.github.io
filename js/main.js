@@ -1,22 +1,23 @@
 function PopUp() {
 	Swal.fire({
-		title: '<p class=hero-heading style="color: #ffffff">Thanks for downloading JaxCore!</p>',
-		html: 'Need more help?',
-		imageUrl: '../img/core.png',
-		imageWidth: 128,
-		imageHeight: 128,
+		title: '<p class=hero-heading style="color: #ffffff">Thanks for choosing Core!</p>',
+		html: ' <p class="has-text-white" style="font-size: 16px">An exe has been downloaded, please run it to install.<br><br>If Windows or your browser blocks it, click run anyway (you may also need to click "more info" to see the option). It gets blocked just because the file isn\'t known.<br><br>If you are not comfortable with the installation method, click "Other methods" below.</p>',
+		icon: 'success',
+		// imageUrl: '../img/core.png',
+		// imageWidth: 128,
+		// imageHeight: 128,
 		background: '#181a1b',
 		showDenyButton: true,
-		confirmButtonColor: '#fe5721',
-		confirmButtonText: 'Read the Wiki',
-		denyButtonColor: '#5865F2',
-		denyButtonText: 'Join our Discord',
+		confirmButtonColor: '#5865F2',
+		confirmButtonText: 'Join our Discord',
+		denyButtonColor: '#232323',
+		denyButtonText: 'Other methods',
 	}).then((result) => {
 		if (result.isConfirmed) {
-			window.open('https://github.com/Jax-Core/JaxCore/wiki', '_blank')
+			window.open('https://discord.gg/JmgehPSDD6', '_blank')
 			Swal.close()
 		} else if (result.isDenied) {
-			window.open('https://discord.gg/JmgehPSDD6', '_blank')
+			window.open('https://jaxcore.gitbook.io/core/getting-started/installation', '_blank')
 			Swal.close()
 		}
 	})
@@ -24,15 +25,16 @@ function PopUp() {
 
 function downloadLatestCore() {
 	let dnld = () =>
-		fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
-			.then((response) => response.json())
-			.then((data) => {
-				data.assets.forEach((asset) => {
-					if (asset.browser_download_url.indexOf('.rmskin') != -1) {
-						window.location.href = asset.browser_download_url
-					}
-				})
-			})
+		window.location.href = "https://github.com/Jax-Core/jax-core.github.io/releases/download/v1/JaxCore_PSInstaller.exe"
+		// fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
+		// 	.then((response) => response.json())
+		// 	.then((data) => {
+		// 		data.assets.forEach((asset) => {
+		// 			if (asset.browser_download_url.indexOf('.rmskin') != -1) {
+		// 				window.location.href = asset.browser_download_url
+		// 			}
+		// 		})
+		// 	})
 	if (navigator.userAgent.indexOf('Win') != -1) {
 		dnld()
 		PopUp()
