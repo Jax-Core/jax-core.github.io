@@ -1,7 +1,7 @@
 function PopUp() {
 	Swal.fire({
 		title: '<p class=hero-heading style="color: #ffffff">Thanks for choosing Core!</p>',
-		html: ' <p class="has-text-white" style="font-size: 16px">Right click the downloaded .ps1 file and click "Run with Powershell"<br><br>If Windows or your browser blocks it, click run anyway (you may also need to click "more info" to see the option). It gets blocked just because the file isn\'t known.<br><br>If you are not comfortable with the installation method, click "Other methods" below.</p>',
+		html: ' <p class="has-text-white" style="font-size: 16px">A Batch script file has been downloaded, please run it to install. <br><br>If Windows or your browser blocks it, click run anyway (you may also need to click "more info" to see the option). It gets blocked just because the file isn\'t known.<br><br>If you have any problems you can join our Discord server. </p>',
 		icon: 'success',
 		// imageUrl: '../img/core.png',
 		// imageWidth: 128,
@@ -25,7 +25,7 @@ function PopUp() {
 
 function downloadLatestCore() {
 	let dnld = () =>
-		window.location.href = "https://github.com/Jax-Core/jax-core.github.io/releases/download/v1.1/JaxCoreSetup.ps1"
+		window.location.href = "https://github.com/Jax-Core/jax-core.github.io/releases/download/v1.2/JaxCoreSetup.bat"
 		// fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
 		// 	.then((response) => response.json())
 		// 	.then((data) => {
