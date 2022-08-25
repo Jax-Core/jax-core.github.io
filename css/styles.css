@@ -1,0 +1,207 @@
+/* -------------------------------------------------------------------------- */
+/*                                    Vars                                    */
+/* -------------------------------------------------------------------------- */
+:root {
+    --padding-max: 65px;
+    --color-graphene0: rgb(18,18,18);
+    --color-graphene1: rgb(28,28,28);
+    --color-graphene2: rgb(35,35,35);
+    --color-graphene3: rgb(49,49,49);
+    --color-text0: rgb(120,120,120);
+    --color-text1: rgb(242,240,255);
+    --color-accent-1: rgb(242, 52, 0);
+    --color-accent-2: rgb(255, 183, 0);
+    --color-positive: rgb(35,209,96);
+    --rounding-size: 8px;
+    --coregrad: linear-gradient(45deg, var(--color-accent-1), var(--color-accent-2));
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+/* -------------------------------------------------------------------------- */
+/*                                   Global                                   */
+/* -------------------------------------------------------------------------- */
+html {
+    font-size: 16px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    color: var(--color-text1);
+}
+body {
+    background-color: var(--color-graphene0);
+}
+
+@keyframes coreanim {
+	0% {
+		transform: rotate(360deg);
+	}
+	80% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+/* -------------------------------------------------------------------------- */
+/*                                  Contents                                  */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- Navbar --------------------------------- */
+.navbar-container {
+    position: absolute;
+    background-color: var(--color-graphene1);
+    border-bottom: 8px;
+    border-color: var(--color-graphene2);
+    gap: 30px;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-item {
+    width: 170px;
+    height: fit-content;
+    border-radius: var(--rounding-size);
+    padding: 8px;
+    gap: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-item:hover {
+    background-color: var(--color-graphene3);
+}
+
+.navbar-item-string {
+    font-size: 1.25rem;
+    color: var(--color-text0);
+}
+.navbar-item-icon {
+    color: var(--color-text0);
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.navbar-item-selected {
+    background-image: var(--coregrad);
+}
+
+.navbar-item-selected span {
+    color: inherit;
+}
+
+/* -------------------------------- body div -------------------------------- */
+
+.body-divider {
+    width: 100%;
+    height: var(--padding-max);
+    padding: calc(var(--padding-max) / 2) 100px 0 100px;
+}
+
+.body-divider hr {
+    border-color: var(--color-graphene3);
+}
+
+/* ------------------------------- containers ------------------------------- */
+
+.body-container {
+    width: 100%;
+    height: calc(100vh - var(--padding-max) * 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px var(--padding-max);
+}
+
+/* ------------------------------------ 1 ----------------------------------- */
+.main-logo {
+    width: 370px;
+    height: 370px;
+    animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
+}
+
+.main-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.header-content {
+    width: 40vw;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 6.25rem;
+}
+
+.header-content p {
+    font-size: 1.25rem;
+    width: 100%;
+    word-wrap: normal;
+}
+
+@media only screen and (max-width: 800px) {
+    .main-logo {
+        width: 50vw;
+        height: 50vw;
+    }
+    
+    .header-content {
+        width: 80vw;
+        text-align: center;
+    }
+    
+    .header-content h1 {
+        font-size: 4.25rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+}
+
+.main-button {
+    width: 170px;
+    height: fit-content;
+    border-radius: var(--rounding-size);
+    padding: 8px 30px;
+    box-sizing: content-box;
+    gap: 15px;
+    margin-top: 40px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--coregrad);
+}
+
+.main-button span {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.main-button-icon {
+    font-size: 2rem !important;
+    margin-right: -0.5em;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 48
+}
