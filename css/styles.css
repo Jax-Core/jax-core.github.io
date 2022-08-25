@@ -12,7 +12,7 @@
     --color-accent-1: rgb(242, 52, 0);
     --color-accent-2: rgb(255, 183, 0);
     --color-positive: rgb(35,209,96);
-    --rounding-size: 8px;
+    --rounding-size: 16px;
     --coregrad: linear-gradient(45deg, var(--color-accent-1), var(--color-accent-2));
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -37,6 +37,7 @@ html {
 }
 body {
     background-color: var(--color-graphene0);
+    overflow-x: hidden;
 }
 
 @keyframes coreanim {
@@ -50,25 +51,42 @@ body {
 		transform: rotate(0deg);
 	}
 }
+
+.coregrad-string {
+	background: linear-gradient(90deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 /* -------------------------------------------------------------------------- */
 /*                                  Contents                                  */
 /* -------------------------------------------------------------------------- */
 
 /* --------------------------------- Navbar --------------------------------- */
 .navbar-container {
-    position: absolute;
-    background-color: var(--color-graphene1);
-    border-bottom: 8px;
-    border-color: var(--color-graphene2);
+    position: fixed;
+    background-color: var(--color-graphene0);
     gap: 30px;
     width: 100vw;
     height: 80px;
+    padding: 0px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.navbar-item {
+.navbar-container > img {
+    animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
+    height: 100%;
+}
+
+.navbar-container > hr {
+    width: 100%;
+    stroke-linecap: round;
+    border-color: var(--color-graphene3);
+}
+
+/* .navbar-item {
     width: 170px;
     height: fit-content;
     border-radius: var(--rounding-size);
@@ -103,7 +121,7 @@ body {
 
 .navbar-item-selected span {
     color: inherit;
-}
+} */
 
 /* -------------------------------- body div -------------------------------- */
 
@@ -121,33 +139,50 @@ body {
 
 .body-container {
     width: 100%;
-    height: calc(100vh - var(--padding-max) * 2);
+    min-height: calc(100vh - var(--padding-max) * 2);
+    height: max-content;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     padding: 0px var(--padding-max);
 }
 
 /* ------------------------------------ 1 ----------------------------------- */
-.main-logo {
-    width: 370px;
-    height: 370px;
-    animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
+
+.body-container-1 {
+    gap: 100px;
 }
 
-.main-logo img {
+.body-container-1-right {
+    display:flex;
+    justify-items: center;
+    align-items: left;
+    flex-direction: column;
+}
+
+.main-video {
+    width: 671px;
+    height: 395px;
+    border: 10px Solid rgba(255,255,255,0.2);
+    border-radius: calc(var(--rounding-size) * 1.7);
+}
+
+.main-video img {
     width: 100%;
     height: 100%;
+    border-radius: var(--rounding-size);
+    box-shadow: 0 0 5px 2px rgba(171, 231, 255, 0.7);
 }
 
 .header-content {
-    width: 40vw;
-    text-align: center;
+    width: 35vw;
+    text-align: left;
 }
 
 .header-content h1 {
-    font-size: 6.25rem;
+    font-size: 5rem;
+    line-height: 1em;
+    margin-bottom: 0.5em;
 }
 
 .header-content p {
@@ -156,10 +191,21 @@ body {
     word-wrap: normal;
 }
 
-@media only screen and (max-width: 800px) {
-    .main-logo {
-        width: 50vw;
-        height: 50vw;
+@media only screen and (max-width: 1000px) {
+
+    .body-container-1 {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .body-container-1-right {
+        align-items: center;
+    }
+
+    .main-video {
+        width: 100%;
+        max-width: 671px;
+        height: auto;
     }
     
     .header-content {
@@ -168,7 +214,7 @@ body {
     }
     
     .header-content h1 {
-        font-size: 4.25rem;
+        font-size: 3rem;
     }
 
     .header-content p {
@@ -204,4 +250,119 @@ body {
     'wght' 600,
     'GRAD' 0,
     'opsz' 48
+}
+
+/* ------------------------------------ 2 ----------------------------------- */
+
+.body-container-2 {
+    display: flex;
+
+}
+
+.body-container-2 > * {
+    width: 50%;
+}
+
+.background-image {
+    z-index: -101;
+}
+
+.background-image > * {
+    position: relative;
+    left: 100px;
+    width: 963.92px;
+    -webkit-mask-image: linear-gradient(268.85deg, #00000000 0%, #000000 40%);
+    filter: drop-shadow(-4px 4px 29px #000000);
+    transform: rotate(10deg);
+}
+
+.about-core h2 {
+    position: relative;
+    left: -30%;
+    font-size: 1.25rem;
+}
+
+.about-core h1 {
+    position: relative;
+    left: -20%;
+    width: calc(20% + 50vw - var(--padding-max));
+    font-size: 4.25rem;
+    margin-bottom: 50px;
+}
+
+.about-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    max-width: 700px;
+    gap: var(--padding-max);
+}
+
+.about-card {
+    background-color: var(--color-graphene2);
+    width: 270px;
+    height: 270px;
+    border-radius: var(--rounding-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.about-card span {
+    font-size: 3rem !important;
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.about-card h3 {
+    font-size: 1.25rem;
+}
+
+.about-card p {
+    font-size: 0.75rem;
+}
+
+@media only screen and (max-width: 1700px) {
+    
+    .body-container-2 > * {
+        width: 100%;
+    }
+
+    .background-image {
+        display: none;
+    }
+
+    .about-core {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-core h2 {
+        position: initial;
+        font-size: 1.25rem;
+    }
+    
+    .about-core h1 {
+        position: initial;
+        width: 100%;
+        font-size: 3rem;
+        margin-bottom: 50px;
+    }
+
+    .about-card-grid {
+        justify-content: center;
+        width: 100%;
+    }
+
 }
