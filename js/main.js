@@ -48,3 +48,49 @@ function downloadLatestCore() {
 		})
 	}
 }
+
+function openNav() {
+	document.getElementById("myNav").style.height = "100%";
+	document.getElementById("navbar-container").style.opacity = "0";
+}
+
+function closeNav() {
+	document.getElementById("myNav").style.height = "0%";
+	document.getElementById("navbar-container").style.opacity = "1";
+}
+
+window.onload = function() {
+	var i = 0;
+	for (const name in module_list) {
+		var array_index = (i >= 5 ? 2 : 1);
+		document.getElementById('array-'+array_index).insertAdjacentHTML('beforeend', `
+		<img src="/img/Module/Icon/`+name+`.png" onclick="changeAbtModuleTo('`+name+`', this)"></img>
+		`)
+		i++;
+	}
+	const first = document.getElementById('array-1').firstElementChild;
+
+	changeAbtModuleTo(Object.keys(module_list)[0], first);
+}
+
+function changeAbtModuleTo(name, next) {
+	if (document.getElementsByClassName('selected-module').length != 0) {
+		document.getElementsByClassName('selected-module')[0].classList.remove('selected-module');
+	}
+	next.classList.add('selected-module');
+	
+	const whole = document.getElementById('modules-interactive-info');
+	const title = document.getElementById('about-module-info-header');
+	const des = document.getElementById('about-module-info-description');
+	const img = document.getElementById('about-module-info-img');
+
+	whole.classList.add('toLeft')
+	
+	setTimeout(() => {
+		title.innerHTML = name;
+		des.innerHTML = module_list[name];
+		img.src = "/img/Module/Card/"+name+".png";
+		whole.classList.remove('toLeft')
+	}, 300);
+	
+}
