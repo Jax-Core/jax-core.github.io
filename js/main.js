@@ -64,7 +64,7 @@ window.onload = function() {
 	for (const name in module_list) {
 		var array_index = (i >= 5 ? 2 : 1);
 		document.getElementById('array-'+array_index).insertAdjacentHTML('beforeend', `
-		<img src="/img/Module/Icon/`+name+`.png" onclick="changeAbtModuleTo('`+name+`', this)"></img>
+		<img src="/img/Module/Icon/`+name+`.png" class="module-array-img" onclick="changeAbtModuleTo('`+name+`', this)"></img>
 		`)
 		i++;
 	}
@@ -74,10 +74,10 @@ window.onload = function() {
 }
 
 function changeAbtModuleTo(name, next) {
-	if (document.getElementsByClassName('selected-module').length != 0) {
-		document.getElementsByClassName('selected-module')[0].classList.remove('selected-module');
+	if (document.getElementsByClassName('module-array-img-selected').length != 0) {
+		document.getElementsByClassName('module-array-img-selected')[0].classList.remove('module-array-img-selected');
 	}
-	next.classList.add('selected-module');
+	next.classList.add('module-array-img-selected');
 	
 	const whole = document.getElementById('modules-interactive-info');
 	const title = document.getElementById('about-module-info-header');

@@ -1,3 +1,5 @@
+/* ------------------------------------ 1 ----------------------------------- */
+
 #s1 {
   gap: 100px;
 }
@@ -305,17 +307,20 @@
 .module-array {
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
+  height: 107px;
 }
 
-.module-array img {
+.module-array-img {
   width: 48px;
   height: 48px;
   padding: 8px;
   border-radius: calc(var(--rounding-size) / 2);
   box-sizing: content-box;
+  transition: all 0.2s linear;
 }
-.selected-module {
+.module-array-img-selected {
+  transform: scale(1.1);
   background-color: var(--color-graphene3);
   border-bottom: 3px Solid var(--color-positive);
 }
