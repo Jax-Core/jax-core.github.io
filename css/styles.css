@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 /* -------------------------------------------------------------------------- */
 /*                                    Vars                                    */
 /* -------------------------------------------------------------------------- */
 :root {
     --padding-max: 65px;
+    --padding-side: 100px;
     --color-graphene0: rgb(18,18,18);
     --color-graphene1: rgb(28,28,28);
     --color-graphene2: rgb(35,35,35);
@@ -26,6 +30,7 @@
 /* -------------------------------------------------------------------------- */
 html {
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 * {
     box-sizing: border-box;
@@ -40,6 +45,11 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    
+    line-height: 1em;
+}
+
 @keyframes coreanim {
 	0% {
 		transform: rotate(360deg);
@@ -52,6 +62,38 @@ body {
 	}
 }
 
+@keyframes fadeinout {
+	0% {
+		opacity: 0.5;
+	}
+	50% {
+        opacity: 1;
+	}
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-10%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+}
+
 .coregrad-string {
 	background: linear-gradient(90deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
 	-webkit-background-clip: text;
@@ -59,25 +101,39 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 /* -------------------------------------------------------------------------- */
-/*                                  Contents                                  */
+/*                                   Navbar                                   */
 /* -------------------------------------------------------------------------- */
 
-/* --------------------------------- Navbar --------------------------------- */
 .navbar-container {
     position: fixed;
-    background-color: var(--color-graphene0);
     gap: 30px;
     width: 100vw;
     height: 80px;
-    padding: 0px 100px;
+    padding: 10px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    background-color: rgba(18,18,18,0.3);
 }
 
-.navbar-container > img {
+.branding {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.branding > img {
     animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
     height: 100%;
+}
+
+.branding > p {
+    font-family: Righteous;
+    font-size: 1.75rem;
 }
 
 .navbar-container > hr {
@@ -86,56 +142,37 @@ body {
     border-color: var(--color-graphene3);
 }
 
-/* .navbar-item {
-    width: 170px;
-    height: fit-content;
-    border-radius: var(--rounding-size);
-    padding: 8px;
-    gap: 15px;
-    text-decoration: none;
+.navbar-items {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 30px;
 }
 
-.navbar-item:hover {
-    background-color: var(--color-graphene3);
-}
-
-.navbar-item-string {
+.navbar-item {
+    text-decoration: none;
     font-size: 1.25rem;
-    color: var(--color-text0);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.navbar-item-icon {
-    color: var(--color-text0);
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+.navbar-item:hover {
+    transform: translateY(5px);
 }
 
-.navbar-item-selected {
-    background-image: var(--coregrad);
-}
-
-.navbar-item-selected span {
-    color: inherit;
-} */
-
-/* -------------------------------- body div -------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                   Divider                                  */
+/* -------------------------------------------------------------------------- */
 
 .body-divider {
     width: 100%;
     height: var(--padding-max);
-    padding: calc(var(--padding-max) / 2) 100px 0 100px;
+    padding: calc(var(--padding-max) / 2) var(--padding-side) 0 var(--padding-side);
 }
 
 .body-divider hr {
     border-color: var(--color-graphene3);
 }
 
-/* ------------------------------- containers ------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                 Containers                                 */
+/* -------------------------------------------------------------------------- */
 
 .body-container {
     width: 100%;
@@ -145,224 +182,4 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0px var(--padding-max);
-}
-
-/* ------------------------------------ 1 ----------------------------------- */
-
-.body-container-1 {
-    gap: 100px;
-}
-
-.body-container-1-right {
-    display:flex;
-    justify-items: center;
-    align-items: left;
-    flex-direction: column;
-}
-
-.main-video {
-    width: 671px;
-    height: 395px;
-    border: 10px Solid rgba(255,255,255,0.2);
-    border-radius: calc(var(--rounding-size) * 1.7);
-}
-
-.main-video img {
-    width: 100%;
-    height: 100%;
-    border-radius: var(--rounding-size);
-    box-shadow: 0 0 5px 2px rgba(171, 231, 255, 0.7);
-}
-
-.header-content {
-    width: 35vw;
-    text-align: left;
-}
-
-.header-content h1 {
-    font-size: 5rem;
-    line-height: 1em;
-    margin-bottom: 0.5em;
-}
-
-.header-content p {
-    font-size: 1.25rem;
-    width: 100%;
-    word-wrap: normal;
-}
-
-@media only screen and (max-width: 1000px) {
-
-    .body-container-1 {
-        flex-direction: column;
-        gap: 50px;
-    }
-
-    .body-container-1-right {
-        align-items: center;
-    }
-
-    .main-video {
-        width: 100%;
-        max-width: 671px;
-        height: auto;
-    }
-    
-    .header-content {
-        width: 80vw;
-        text-align: center;
-    }
-    
-    .header-content h1 {
-        font-size: 3rem;
-    }
-
-    .header-content p {
-        font-size: 1rem;
-    }
-}
-
-.main-button {
-    width: 170px;
-    height: fit-content;
-    border-radius: var(--rounding-size);
-    padding: 8px 30px;
-    box-sizing: content-box;
-    gap: 15px;
-    margin-top: 40px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: var(--coregrad);
-}
-
-.main-button span {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.main-button-icon {
-    font-size: 2rem !important;
-    margin-right: -0.5em;
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 600,
-    'GRAD' 0,
-    'opsz' 48
-}
-
-/* ------------------------------------ 2 ----------------------------------- */
-
-.body-container-2 {
-    display: flex;
-
-}
-
-.body-container-2 > * {
-    width: 50%;
-}
-
-.background-image {
-    z-index: -101;
-}
-
-.background-image > * {
-    position: relative;
-    left: 100px;
-    width: 963.92px;
-    -webkit-mask-image: linear-gradient(268.85deg, #00000000 0%, #000000 40%);
-    filter: drop-shadow(-4px 4px 29px #000000);
-    transform: rotate(10deg);
-}
-
-.about-core h2 {
-    position: relative;
-    left: -30%;
-    font-size: 1.25rem;
-}
-
-.about-core h1 {
-    position: relative;
-    left: -20%;
-    width: calc(20% + 50vw - var(--padding-max));
-    font-size: 4.25rem;
-    margin-bottom: 50px;
-}
-
-.about-card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 700px;
-    max-width: 700px;
-    gap: var(--padding-max);
-}
-
-.about-card {
-    background-color: var(--color-graphene2);
-    width: 270px;
-    height: 270px;
-    border-radius: var(--rounding-size);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    gap: 10px;
-}
-
-.about-card span {
-    font-size: 3rem !important;
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
-}
-
-.about-card h3 {
-    font-size: 1.25rem;
-}
-
-.about-card p {
-    font-size: 0.75rem;
-}
-
-@media only screen and (max-width: 1700px) {
-    
-    .body-container-2 > * {
-        width: 100%;
-    }
-
-    .background-image {
-        display: none;
-    }
-
-    .about-core {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        text-align: center;
-    }
-
-    .about-core h2 {
-        position: initial;
-        font-size: 1.25rem;
-    }
-    
-    .about-core h1 {
-        position: initial;
-        width: 100%;
-        font-size: 3rem;
-        margin-bottom: 50px;
-    }
-
-    .about-card-grid {
-        justify-content: center;
-        width: 100%;
-    }
-
 }
