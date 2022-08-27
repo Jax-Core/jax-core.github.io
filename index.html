@@ -5,260 +5,176 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="twitter:title" content="EnhancedJax - JaxCore" />
+	<meta name="twitter:title" content="JaxCore for Windows" />
 	<meta name="twitter:description" content="Your go to for desktop customization" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="https://raw.githubusercontent.com/deathcrafter/RainRepo/main/jaxcore.png" />
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/Jax-Core/jax-core.github.io/img/embed.png" />
 	<meta property="og:title" content="JaxCore" />
-	<meta property="og:image" content="https://raw.githubusercontent.com/deathcrafter/RainRepo/main/jaxcore.png" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/Jax-Core/jax-core.github.io/img/embed.png" />
 	<meta property="og:image:type" content="image/png" />
-	<meta property="og:image:width" content="1339" />
-	<meta property="og:image:height" content="622" />
+	<meta property="og:image:width" content="1889" />
+	<meta property="og:image:height" content="883" />
 	<meta property="og:image:alt" content="A shiny image of JaxCore" />
-	<!-- <link rel="stylesheet" href="css/debug.css"> -->
-	<link rel="stylesheet" href="css/styles.css" />
-	<link rel="icon" href="img/core.png" type="image/png" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/home.css" />
+	<link rel="icon" href="/img/IconLogo.png" type="image/png" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<title>JaxCore</title>
+	<title>JaxCore for Windows</title>
+	<meta name="description" content="JaxCore is a beautiful, functional, customizable set of tools and widgets to spice up your Windows desktop. JaxCore runs on Rainmeter, so there's no limit for customization.">
+	<script src="js/module_list.js"></script>
 </head>
 
-<body class="no-select">
-	<div id="herosectionback"></div>
-	<nav class="navbar has-background-transparent is-sticky" aria-label="main navigation">
-		<div class="navbar-brand has-background-transparent">
-			<a class="navbar-item">
-				<img id="nav-logo" src="img/core.png" height="42" width="42" alt="core logo" />
+<body>
+	<!-- ----------------------------- Normal nav ------------------------------ -->
+	<nav class="" id="navbar-container">
+		<a class="branding" href="/index.html">
+			<img aria-hidden="true" alt="JaxCore Logo" src="img\Logo.png"></img>
+			<p>JaxCore</p>
+		</a>
+		<hr aria-hidden="true">
+		</hr>
+		<div aria-hidden="true" id="navbar-items">
+			<a href="#s1-divider" class="navbar-responsive-hide navbar-item">Home</a>
+			<a href="#s3-divider" class="navbar-responsive-hide navbar-item">Modules</a>
+			<a href="https://github.com/Jax-Core/JaxCore" class="navbar-responsive-hide navbar-item navbar-icon">
+				<img alt="Github icon" class="navbar-responsive-hide" src="/img/Github.png"></img>
 			</a>
-			<p class="navbar-item has-text-white">JaxOriginals</p>
-
-			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-				data-target="navbarBasicExample">
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
+			<a href="https://discord.gg/JmgehPSDD6" class="navbar-responsive-hide navbar-item navbar-icon">
+				<img alt="Discord icon" class="navbar-responsive-hide" src="/img/Discord.png"></img>
 			</a>
-		</div>
-
-		<div id="navbarBasicExample" class="navbar-menu navbar-end has-background-transparent">
-			<div class="navbar-item has-background-transparent">
-				<a class="
-							navbar-item
-							has-background-transparent has-text-white
-							m-1
-						" href="https://jax-core.github.io">
-					Home
-				</a>
-
-				<a class="
-							navbar-item
-							has-background-transparent has-text-white
-							m-1
-						" href="https://jax-core.github.io/skins">
-					Modules & widgets
-				</a>
-				
-				<a class="
-							navbar-item
-							has-background-transparent has-text-white
-							m-1
-						" href="https://jaxcore.gitbook.io/core/">
-					Docs
-				</a>
-
-				<a class="
-							navbar-item
-							has-background-transparent has-text-white
-							m-1
-						" href="https://jax-core.github.io/faq">
-					FAQ
-				</a>
-
-				<a class="
-							navbar-item
-							has-background-transparent has-text-white
-							m-1
-						" id="donation">
-					Donate
-				</a>
-			</div>
+			<span onclick="openNav()" id="navbar-burga" class="material-symbols-outlined">menu</span>
 		</div>
 	</nav>
-
-	<!-- Hero Section -->
-	<section class="
-				hero
-				has-align-items-center
-				is-fullheight-with-navbar
-				has-background-transparent
-			" id="herosection" style="position: relative">
-		<div class="columns is-vcentered hero-body m-6">
-			<div class="column has-text-left">
-				<div style="display: inline-block">
-					<h1 class="
-								is-size-1-override
-								has-text-left has-text-centered-mobile
-							">
-						<strong class="has-text-white hero-heading">JaxCore</strong>
-					</h1>
-					<h2 class="
-								is-size-5 is-size-5-mobile
-								has-text-left
-								has-text-centered-mobile
-								has-text-white
-							">
-						A set of beautiful tools and widgets to spice up your desktop.
-					</h2>
+	<!-- ----------------------------- Overlay nav ----------------------------- -->
+	<div aria-hidden="true" id="myNav" class="overlay">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<div class="overlay-content">
+			<a href="#s1-divider" onclick="closeNav()" class="navbar-item">Home</a>
+			<a href="#s3-divider" onclick="closeNav()" class="navbar-item">Modules</a>
+			<a href="https://github.com/Jax-Core/JaxCore" onclick="closeNav()" class="navbar-item">Github</a>
+			<a href="https://discord.gg/JmgehPSDD6" onclick="closeNav()" class="navbar-item">Discord</a>
+		</div>
+	</div>
+	<!-- ------------------------------- Content ------------------------------- -->
+	<div aria-hidden="true" class="body-divider" id="s1-divider">
+		<hr>
+		</hr>
+	</div>
+	<div class="body-container" id="s1">
+		<div aria-hidden="true" class="main-video">
+			<video autoplay muted loop>
+				<source src="vid/home.mp4" type="video/mp4" />
+			</video>
+			<div class="e1"
+				style="background: linear-gradient(197.37deg, #7450DB -0.38%, rgba(138, 234, 240, 0) 101.89%), linear-gradient(115.93deg, #3E88F6 4.86%, rgba(62, 180, 246, 0.33) 38.05%, rgba(62, 235, 246, 0) 74.14%), radial-gradient(56.47% 76.87% at 6.92% 7.55%, rgba(62, 136, 246, 0.7) 0%, rgba(62, 158, 246, 0.182) 52.16%, rgba(62, 246, 246, 0) 100%), linear-gradient(306.53deg, #2EE4E3 19.83%, rgba(46, 228, 227, 0) 97.33%); background-blend-mode: normal, normal, normal, normal, normal, normal; filter: blur(75px);">
+			</div>
+		</div>
+		<div class="body-container-1-right">
+			<div class="header-content">
+				<h1>A desktop that’s truely yours</h1>
+				<p>JaxCore is a beautiful, functional, customizable set of tools and widgets to spice up your desktop
+				</p>
+			</div>
+			<div class="main-array">
+				<div class="button button-main" onclick="downloadLatestCore()">
+					<span class="button-main-string">Download</span>
+					<span class="button-main-icon material-symbols-outlined">download</span>
 				</div>
-				<br />
-				<div class="columns is-mobile mt-4" id="main-section-buttons">
-					<div class="column is-narrow">
-						<button class="btn-faq p-2" id="btn-faq">
-							Modules & Widgets
-						</button>
+				<a class="button button-modules" href="#s3-divider">
+					<span class="button-modules-string">Modules</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div aria-hidden="true" class="body-divider" id="s2-divider">
+		<hr>
+		</hr>
+	</div>
+	<div class="body-container" id="s2">
+		<div aria-hidden="true" class="background-image">
+			<img alt="JaxCore's settings menu as a background" src="img\section2.png"></img>
+		</div>
+		<div class="about-core">
+			<h2>Complimentary, customizable,</h2>
+			<h1>Works how you wanted it to</h1>
+			<div class="about-card-grid">
+				<div class="about-card">
+					<span class="material-symbols-outlined">Visibility</span>
+					<h3>Beautiful</h3>
+					<p>A multitude of pre-made styles, matching different UI designs. Seamlessly integrate modules into
+						your setup.</p>
+				</div>
+				<div class="about-card">
+					<span class="material-symbols-outlined">Settings_Suggest</span>
+					<h3>Settings</h3>
+					<p>Every module has a dedicated settings menu with plentiful of options to play with. No more
+						editing files.</p>
+				</div>
+				<div class="about-card">
+					<span class="material-symbols-outlined">Download_For_Offline</span>
+					<h3>Installer</h3>
+					<p>Built-in installer, updater and uninstaller for every module, no need to go to a website to get
+						the latest version of something.</p>
+				</div>
+				<div class="about-card">
+					<span class="material-symbols-outlined">Edit</span>
+					<h3>Flexible</h3>
+					<p>Since JaxCore runs on Rainmeter, you can customize every aspect to your liking. Sky's the limit.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div aria-hidden="true" class="body-divider" id="s3-divider">
+		<hr>
+		</hr>
+	</div>
+	<div class="body-container" id="s3">
+		<div class="about-modules">
+			<div class="about-modules-title">
+				<h2>Get to know what you’ll use</h2>
+				<h1>Modules & widgets</h1>
+			</div>
+			<div id="modules-interactive">
+				<div aria-hidden="true" id="modules-interactive-top">
+					<div class="module-array" id="array-1">
 					</div>
-					<div class="column is-narrow">
-						<button class="btn-dl p-2" id="btn-dl">
-							Download
-						</button>
+					<div class="module-array" id="array-2">
+					</div>
+				</div>
+				<div id="modules-interactive-info">
+					<div>
+						<img alt="Current selected module splash image" id="about-module-info-img"></img>
+					</div>
+					<div>
+						<h3 id="about-module-info-header"></h3>
+						<p id="about-module-info-description"></p>
 					</div>
 				</div>
 			</div>
-			<div class="column">
-				<div class="has-text-right has-text-centered-mobile">
-					<figure class="animation-float" id="herologoback" style="
-								display: inline-block;
-								position: relative;
-								height: 18.3125rem;
-								width: 12.375rem;
-							">
-						<img id="herologo" src="./img/core.png" style="height: 12.25rem; width: 12.25rem"
-							alt="hero logo" />
-					</figure>
-				</div>
-			</div>
 		</div>
-	</section>
-
-	<!-- Section 1 -->
-	<section class="section is-medium has-background-transparent" id="about">
-		<div class="columns is-vcentered scroll-fade m-6">
-			<div class="column is-full-mobile is-two-thirds">
-				<h1 class="
-							is-size-2 is-size-3-mobile
-							has-text-left has-text-centered-mobile
-						">
-					<strong class="has-text-white">Desktop utilities that you'll need</strong>
-				</h1>
-				<p class="
-							is-size-8 is-size-9-mobile
-							has-text-left
-							has-text-centered-mobile
-							has-text-white
-						">
-					A re-designed volume flyout, a new application volume mixer and a customizable start menu are not the only utilities that you can find in Core!
-				</p>
-			</div>
-			<div class="column is-full-mobile is-one-third">
-				<div class="
-							has-text-right has-text-centered-mobile
-							mt-3-mobile
-						">
-					<figure class="image" style="display: inline-block">
-						<img class="section-image animation-float" src="./img/section1.png" alt="section logo" />
-					</figure>
-				</div>
-			</div>
+		<div aria-hidden="true" class="background-modules">
+			<img alt="A gallery of JaxCore module as a background" src="/img/Section3.png"></img>
 		</div>
-	</section>
-
-	<!-- Section 2 -->
-	<section class="section is-medium has-background-transparent">
-		<div class="columns columns-reverse is-vcentered scroll-fade m-6">
-			<div class="column is-full-mobile is-one-third">
-				<div class="
-							has-text-left has-text-centered-mobile
-							mt-3-mobile
-						">
-					<figure class="image" style="display: inline-block">
-						<img class="section-image animation-float" src="./img/section2.png" alt="section logo" />
-					</figure>
-				</div>
-			</div>
-			<div class="column is-full-mobile is-two-thirds">
-				<h1 class="
-							is-size-2 is-size-3-mobile
-							has-text-right has-text-centered-mobile
-						">
-					<strong class="has-text-white">Customization made easy</strong>
-				</h1>
-				<p class="
-							is-size-8 is-size-9-mobile
-							has-text-right
-							has-text-centered-mobile
-							has-text-white
-						">
-					With a dedicated configuration menu and plentiful customization options for each module, Core makes personalizing modules easier.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- Section 3 -->
-	<section class="section is-medium has-background-transparent">
-		<div class="columns is-vcentered scroll-fade m-6">
-			<div class="column is-full-mobile is-two-thirds">
-				<h1 class="
-							is-size-2 is-size-3-mobile
-							has-text-left has-text-centered-mobile
-						">
-					<strong class="has-text-white">Updates are more accessible than ever</strong>
-				</h1>
-				<p class="
-							is-size-8 is-size-9-mobile
-							has-text-left
-							has-text-centered-mobile
-							has-text-white
-						">
-					Core's built-in update checker will make sure you never miss out on new features or bug fixes. Core
-					can also notify you whenever there are new updates for the skins you have installed. You can install
-					all the updates via a single button press and Core takes care of the rest for you.
-				</p>
-			</div>
-			<div class="column is-full-mobile is-one-third">
-				<div class="
-							has-text-right has-text-centered-mobile
-							mt-3-mobile
-						">
-					<figure class="image" style="display: inline-block">
-						<img class="section-image animation-float" src="./img/section3.png" alt="section logo" />
-					</figure>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Download -->
-	<section class="section is-medium has-background-transparent">
-		<div class="
-					columns
-					is-vcentered
-					scroll-fade
-					columns-direction-override
-				">
-			<div class="column is-full-mobile is-two-thirds">
-				<h1 class="is-size-3 is-size-4-mobile has-text-centered">
-					<strong class="has-text-white">Ready to spice up your desktop?</strong>
-				</h1>
-			</div>
-			<div class="column is-narrow">
-				<div class="has-text-centered mt-4">
-					<figure class="image has-text-centered">
-						<img class="p-5 coredownload" src="./img/download.svg" id="download" alt="download svg" />
-					</figure>
-				</div>
-			</div>
-		</div>
-	</section>
+	</div>
+	<div aria-hidden="true" class="body-divider" id="s4-divider">
+		<hr>
+		</hr>
+	</div>
+	<div class="body-container" id="s4">
+		<img alt="Logo of JaxCore: S-Hub" src="/img/S-Hub Logo.png"></img>
+		<h1>JaxCore: S-Hub</h1>
+		<p>S-Hub will be a place for you to share your Windows themed setups, as well as sole widgets or themes, for
+			your friends & other themers to download & use.</p>
+		<p>Winter 2022</p>
+		<!-- <div>
+		</div> -->
+	</div>
+	<div aria-hidden="true" class="body-divider">
+		<hr>
+		</hr>
+	</div>
 	<script src="js/main.js"></script>
 </body>
 

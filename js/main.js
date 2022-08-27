@@ -1,7 +1,7 @@
 function PopUp() {
 	Swal.fire({
-		title: '<p class=hero-heading style="color: #ffffff">Thanks for choosing Core!</p>',
-		html: ' <p class="has-text-white" style="font-size: 16px">A Batch script file has been downloaded, please run it to install. <br><br>If Windows or your browser blocks it, click run anyway (you may also need to click "more info" to see the option). It gets blocked just because the file isn\'t known.<br><br>If you have any problems you can join our Discord server. </p>',
+		title: '<p class="coregrad-string" style="font-weight: 600;font-size: 2rem;">Thanks for choosing Core!</p>',
+		html: ' <p>A Batch script file has been downloaded, please run it to install. <br><br>If Windows or your browser blocks it, click run anyway (you may also need to click "more info" to see the option). It gets blocked just because the file isn\'t known.<br><br>If you have any problems you can join our Discord server. </p>',
 		icon: 'success',
 		// imageUrl: '../img/core.png',
 		// imageWidth: 128,
@@ -26,15 +26,6 @@ function PopUp() {
 function downloadLatestCore() {
 	let dnld = () =>
 		window.location.href = "https://github.com/Jax-Core/jax-core.github.io/releases/download/v1.2/JaxCoreSetup.bat"
-		// fetch('https://api.github.com/repos/Jax-Core/JaxCore/releases/latest')
-		// 	.then((response) => response.json())
-		// 	.then((data) => {
-		// 		data.assets.forEach((asset) => {
-		// 			if (asset.browser_download_url.indexOf('.rmskin') != -1) {
-		// 				window.location.href = asset.browser_download_url
-		// 			}
-		// 		})
-		// 	})
 	if (navigator.userAgent.indexOf('Win') != -1) {
 		dnld()
 		PopUp()
@@ -58,139 +49,48 @@ function downloadLatestCore() {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-	// hamburger
-	// Get all "navbar-burger" elements
-	const $navbarBurgers = Array.prototype.slice.call(
-		document.querySelectorAll('.navbar-burger'),
-		0
-	)
+function openNav() {
+	document.getElementById("myNav").style.height = "100%";
+	document.getElementById("navbar-container").style.opacity = "0";
+}
 
-	// Check if there are any navbar burgers
-	if ($navbarBurgers.length > 0) {
-		// Add a click event on each of them
-		$navbarBurgers.forEach((el) => {
-			let children = el.children
-			// Get the target from the "data-target" attribute
-			const target = el.dataset.target
-			const $target = document.getElementById(target)
-			el.addEventListener('click', function (event) {
-				console.log(event.currentTarget)
-				// Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-				el.classList.toggle('is-active')
-				$target.classList.toggle('is-active')
-			})
-		})
+function closeNav() {
+	document.getElementById("myNav").style.height = "0%";
+	document.getElementById("navbar-container").style.opacity = "1";
+}
+
+window.onload = function() {
+	var i = 0;
+	for (const name in module_list) {
+		var array_index = (i >= 5 ? 2 : 1);
+		document.getElementById('array-'+array_index).insertAdjacentHTML('beforeend', `
+		<img src="/img/Module/Icon/`+name+`.png" class="module-array-img" onclick="changeAbtModuleTo('`+name+`', this)"></img>
+		`)
+		i++;
 	}
+	const first = document.getElementById('array-1').firstElementChild;
 
-	// link buttons
-	const navlogo = document
-		.querySelector('.navbar-item img')
-		.addEventListener('click', () => {
-			window.location.href = 'https://jax-core.github.io'
-		})
-
-	// donation button
-	document.getElementById('donation').addEventListener('click', () => {
-		window.open(
-			'https://ko-fi.com/jaxoriginals',
-			'Jax - KoFi',
-			'height=500, width=400'
-		)
-	})
-
-	// download button
-	document
-		.querySelectorAll('.coredownload')
-		.forEach((el) => el.addEventListener('click', downloadLatestCore))
-})
-
-// hero first button
-document.getElementById('btn-faq').addEventListener('click', () => {
-	window.location.href = 'https://jax-core.github.io/skins'
-})
-
-// hero second button
-document.getElementById('btn-dl').addEventListener('click', () => {
-	downloadLatestCore()
-})
-
-//#region scroll animation
-
-let navScrollElements = document.querySelectorAll(
-	'.navbar.has-background-transparent'
-)
-
-let scrollFadeElements = document.querySelectorAll('.scroll-fade')
-let heroSectionBack = document.querySelector('#herosectionback')
-
-let heroSection = document.querySelector('#herosection')
-
-scrollFadeElements.forEach((element) => {
-	element.style.opacity = 0
-})
-
-const elementInView = (el, percentageScroll = 100) => {
-	const elementTop =
-		el.getBoundingClientRect().top <=
-		(window.innerHeight || document.documentElement.clientHeight) *
-		(percentageScroll / 100)
-	const elementBottom =
-		el.getBoundingClientRect().bottom >
-		(window.innerHeight || document.documentElement.clientHeight) *
-		(1 - percentageScroll / 100)
-
-	return elementTop && elementBottom
+	changeAbtModuleTo(Object.keys(module_list)[0], first);
 }
 
-const displayScrollElement = (element) => {
-	element.classList.add('in-view')
-}
-
-const hideScrollElement = (element) => {
-	element.classList.remove('in-view')
-}
-
-const scrollProc = () => {
-	heroSectionBack.style.opacity =
-		0.7 *
-		(heroSection.getBoundingClientRect().bottom /
-			(window.innerHeight || document.documentElement.clientHeight))
-
-	if (document.querySelector('body').getBoundingClientRect().top < 0) {
-		navScrollElements.forEach((el) => {
-			el.classList.add('scrolled')
-		})
-	} else {
-		navScrollElements.forEach((el) => {
-			el.classList.remove('scrolled')
-		})
+function changeAbtModuleTo(name, next) {
+	if (document.getElementsByClassName('module-array-img-selected').length != 0) {
+		document.getElementsByClassName('module-array-img-selected')[0].classList.remove('module-array-img-selected');
 	}
+	next.classList.add('module-array-img-selected');
+	
+	const whole = document.getElementById('modules-interactive-info');
+	const title = document.getElementById('about-module-info-header');
+	const des = document.getElementById('about-module-info-description');
+	const img = document.getElementById('about-module-info-img');
 
-	scrollFadeElements.forEach((el) => {
-		if (elementInView(el, 85)) {
-			displayScrollElement(el)
-		} else {
-			hideScrollElement(el)
-		}
-	})
-}
-
-let throttleTimer = false
-
-const throttle = (callback, time) => {
-	if (throttleTimer) return
-
-	throttleTimer = true
-
+	whole.classList.add('toLeft')
+	
 	setTimeout(() => {
-		callback()
-		throttleTimer = false
-	}, time)
+		title.innerHTML = name;
+		des.innerHTML = module_list[name];
+		img.src = "/img/Module/Card/"+name+".png";
+		whole.classList.remove('toLeft')
+	}, 300);
+	
 }
-
-window.addEventListener('scroll', () => {
-	throttle(scrollProc, 50)
-})
-
-//#endregion
