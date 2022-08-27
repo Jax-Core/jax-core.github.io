@@ -157,6 +157,7 @@ h1 {
 #navbar-items {
   display: flex;
   gap: 30px;
+  align-items: center;
 }
 
 #navbar-burga {
@@ -166,10 +167,20 @@ h1 {
 .navbar-item {
   text-decoration: none;
   font-size: 1.25rem;
+  height: 100%;
   transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .navbar-item:hover {
   transform: translateY(5px);
+}
+.navbar-item.navbar-icon {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navbar-icon > img {
+  width: 2rem;
+  height: 2rem;
 }
 
 @media only screen and (max-width: 845px) {
@@ -177,8 +188,9 @@ h1 {
     padding: 10px calc(var(--padding-side) / 2);
   }
 
-  .navbar-item {
+  .navbar-responsive-hide.navbar-icon.navbar-item, .navbar-responsive-hide {
     display: none;
+    width: 0;
   }
 
   #navbar-burga {
@@ -191,7 +203,7 @@ h1 {
   overflow-y: hidden;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -201,11 +213,11 @@ h1 {
 }
 
 .overlay a {
+  display: block;
   padding: 8px;
   text-decoration: none;
   font-size: 3rem;
   font-family: "Righteous", sans-serif;
-  display: block;
   color: var(--color-text0);
   transition: 0.3s;
 }
