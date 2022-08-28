@@ -59,19 +59,6 @@ function closeNav() {
 	document.getElementById("navbar-container").style.opacity = "1";
 }
 
-window.onload = function() {
-	var i = 0;
-	for (const name in module_list) {
-		var array_index = (i >= 5 ? 2 : 1);
-		document.getElementById('array-'+array_index).insertAdjacentHTML('beforeend', `
-		<img src="/img/Module/Icon/`+name+`.png" class="module-array-img" onclick="changeAbtModuleTo('`+name+`', this)"></img>
-		`)
-		i++;
-	}
-	const first = document.getElementById('array-1').firstElementChild;
-
-	changeAbtModuleTo(Object.keys(module_list)[0], first);
-}
 
 function changeAbtModuleTo(name, next) {
 	if (document.getElementsByClassName('module-array-img-selected').length != 0) {
@@ -94,3 +81,73 @@ function changeAbtModuleTo(name, next) {
 	}, 300);
 	
 }
+
+function isElementInViewport (el) {
+
+    // Special bonus for those using jQuery
+    if (typeof jQuery === "function" && el instanceof jQuery) {
+        el = el[0];
+    }
+
+    var rect = el.getBoundingClientRect();
+
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /* or $(window).height() */
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth) /* or $(window).width() */
+    );
+}
+
+function onVisibilityChange(el, callback) {
+    var old_visible;
+    return function () {
+        var visible = isElementInViewport(el);
+        if (visible != old_visible) {
+            old_visible = visible;
+            if (typeof callback == 'function') {
+                callback(visible);
+            }
+        }
+    }
+}
+/* -------------------------------------------------------------------------- */
+/*                                   On load                                  */
+/* -------------------------------------------------------------------------- */
+
+window.onload = function() {
+	var i = 0;
+	for (const name in module_list) {
+		var array_index = (i >= 5 ? 2 : 1);
+		document.getElementById('array-'+array_index).insertAdjacentHTML('beforeend', `
+		<img src="/img/Module/Icon/`+name+`.png" class="module-array-img" onclick="changeAbtModuleTo('`+name+`', this)"></img>
+		`)
+		i++;
+	}
+	const first = document.getElementById('array-1').firstElementChild;
+
+	changeAbtModuleTo(Object.keys(module_list)[0], first);
+}
+
+var navdlbutton = document.getElementById('nav-dlbutton')
+
+var handler = onVisibilityChange(document.getElementById('dlbutton'), function(bool) {
+    if (bool) {
+		navdlbutton.classList.add('not-active')
+	} else {
+		navdlbutton.classList.remove('not-active')
+	}
+});
+
+if (window.addEventListener) {
+    addEventListener('DOMContentLoaded', handler, false);
+    addEventListener('load', handler, false);
+    addEventListener('scroll', handler, false);
+    addEventListener('resize', handler, false);
+} else if (window.attachEvent)  {
+    attachEvent('onDOMContentLoaded', handler); // Internet Explorer 9+ :(
+    attachEvent('onload', handler);
+    attachEvent('onscroll', handler);
+    attachEvent('onresize', handler);
+}
+

@@ -24,7 +24,7 @@
   height: 100%;
   position: relative;
   border-radius: calc(var(--rounding-size) / 2);
-  outline: 5px Solid var(--color-text1);
+  outline: 5px Solid rgb(var(--color-text1));
   /* box-shadow: 0 0 5px 2px rgba(171, 231, 255, 0.7); */
 }
 
@@ -64,7 +64,7 @@
 }
 
 .button {
-  border-radius: var(--rounding-size);
+  border-radius: calc(var(--rounding-size) / 2);
   padding: 8px 40px;
   box-sizing: content-box;
   gap: 15px;
@@ -79,9 +79,10 @@
 
 .button-main {
   background-image: var(--coregrad);
+  box-shadow: 0px 0px 12px 0px rgba(var(--color-accent-2), 0.5);
 }
 .button-modules {
-  background-color: var(--color-graphene2);
+  background-color: rgb(var(--color-graphene2));
 }
 
 .button:hover {
@@ -89,15 +90,13 @@
   cursor: pointer;
 }
 
-.button-main span {
+.button-main-string {
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.button-main-icon {
-  font-size: 1.5rem !important;
-  margin-right: -0.5em;
-  font-variation-settings: "FILL" 1, "wght" 800, "GRAD" 0, "opsz" 48;
+.button-main-dlcount {
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -180,7 +179,7 @@
 }
 
 .about-card {
-  background-color: var(--color-graphene2);
+  background-color: rgb(var(--color-graphene2));
   width: 300px;
   height: 300px;
   border-radius: var(--rounding-size);
@@ -196,7 +195,7 @@
 }
 .about-card-grid .about-card:hover {
   transform: translateY(-10px) rotate(0.5deg);
-  background-color: var(--color-graphene3);
+  background-color: rgb(var(--color-graphene3));
   opacity: 1;
 }
 
@@ -299,7 +298,7 @@
 .module-array,
 #modules-interactive-info {
   padding: 20px;
-  background-color: var(--color-graphene2);
+  background-color: rgb(var(--color-graphene2));
   border-radius: var(--rounding-size);
 }
 
@@ -325,8 +324,8 @@
 }
 .module-array-img-selected {
   transform: scale(1.1);
-  background-color: var(--color-graphene3);
-  border-bottom: 3px Solid var(--color-positive);
+  background-color: rgb(var(--color-graphene3));
+  border-bottom: 3px Solid rgb(var(--color-positive));
 }
 
 #modules-interactive-info {
@@ -408,7 +407,7 @@
   #modules-interactive-top {
     width: 100%;
     padding: 0px 20px;
-    background-color: var(--color-graphene2);
+    background-color: rgb(var(--color-graphene2));
     border-radius: var(--rounding-size);
     display: flex;
     gap: 20px;
