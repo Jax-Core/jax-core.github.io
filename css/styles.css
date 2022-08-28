@@ -120,6 +120,7 @@ img {
   z-index: 100;
   width: 100vw;
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   background-color: rgba(18, 18, 18, 0.3);
   transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
