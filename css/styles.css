@@ -22,12 +22,6 @@
     var(--color-accent-1),
     var(--color-accent-2)
   );
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently */
 }
 /* -------------------------------------------------------------------------- */
 /*                                   Global                                   */
@@ -51,6 +45,15 @@ body {
 
 h1 {
   line-height: 1em;
+}
+
+img {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
 }
 
 @keyframes coreanim {
@@ -151,7 +154,7 @@ h1 {
 #navbar-container > hr {
   width: 100%;
   stroke-linecap: round;
-  border-color: var(--color-graphene3);
+  border-color: var(--color-text0);
 }
 
 #navbar-items {
