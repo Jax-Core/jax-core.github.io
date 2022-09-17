@@ -38,6 +38,14 @@ html {
   font-family: "Poppins", sans-serif;
   color: rgb(var(--color-text1));
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none;
+    transition: none;
+  }
+}
+
 body {
   background-color: rgb(var(--color-graphene0));
   overflow-x: hidden;
@@ -68,6 +76,21 @@ img {
   }
 }
 
+@keyframes shubanim {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: -45deg;
+  }
+  60% {
+    rotate: -45deg;
+  }
+  100% {
+    rotate: -360deg;
+  }
+}
+
 @keyframes fadeinout {
   0% {
     opacity: 0.5;
@@ -83,6 +106,17 @@ img {
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-20%);
     opacity: 0;
   }
   100% {
@@ -143,7 +177,7 @@ img {
 }
 
 .branding > img {
-  animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
+  animation: coreanim 2.625s cubic-bezier(0.76, 0, 0.24, 1) 0ms;
   height: 100%;
 }
 
@@ -300,10 +334,16 @@ img {
 
 .body-container {
   width: 100%;
-  min-height: calc(100vh - var(--padding-max) * 2);
+  min-height: calc(100vh - var(--padding-max) * 2 + 1px);
   height: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0px var(--padding-max);
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.body-container-visible {
+  opacity: 1;
 }

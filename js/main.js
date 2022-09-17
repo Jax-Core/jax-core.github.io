@@ -129,15 +129,28 @@ window.onload = function() {
 	changeAbtModuleTo(Object.keys(module_list)[0], first);
 }
 
-var navdlbutton = document.getElementById('nav-dlbutton')
-
-var handler = onVisibilityChange(document.getElementById('dlbutton'), function(bool) {
+const handler = onVisibilityChange(document.getElementById('dlbutton'), function(bool) {
     if (bool) {
 		navdlbutton.classList.add('not-active')
 	} else {
 		navdlbutton.classList.remove('not-active')
 	}
 });
+
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('body-container-visible');
+		} else {
+			entry.target.classList.remove('body-container-visible');
+		}
+	});
+});
+
+const navdlbutton = document.getElementById('nav-dlbutton');
+const sections = document.querySelectorAll('.body-container');
+
+sections.forEach((el) => observer.observe(el));
 
 if (window.addEventListener) {
     addEventListener('DOMContentLoaded', handler, false);

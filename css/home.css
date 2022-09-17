@@ -73,13 +73,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* animation: slideInFromLeft 0.5s cubic-bezier(0, 0.55, 0.45, 1) 0.2s 1 normal both; */
   transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .button-main {
   background-image: var(--coregrad);
-  box-shadow: 0px 0px 12px 0px rgba(var(--color-accent-2), 0.5);
 }
 .button-modules {
   background-color: rgb(var(--color-graphene2));
@@ -143,13 +141,20 @@
   z-index: -101;
 }
 
-.background-image > * {
+.background-image img {
   position: relative;
   left: 100px;
   width: 963.92px;
   -webkit-mask-image: linear-gradient(268.85deg, #00000000 0%, #000000 40%);
   filter: drop-shadow(-4px 4px 29px #000000);
-  transform: rotate(10deg);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+  translate: 10%;
+  rotate: 0deg;
+}
+
+#s2.body-container-visible .background-image img {
+  translate: 0;
+  rotate: 10deg;
 }
 
 .about-core h2 {
@@ -179,6 +184,8 @@
 }
 
 .about-card {
+  scale: 0;
+  rotate: -10deg;
   background-color: rgb(var(--color-graphene2));
   width: 300px;
   height: 300px;
@@ -191,8 +198,18 @@
   padding: 20px;
   gap: 10px;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-    background-color 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.1s linear;
+    background-color 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+    opacity 0.1s linear,
+    scale 1s cubic-bezier(0.22, 1, 0.36, 1) calc(75ms * var(--order)),
+    rotate 1s cubic-bezier(0.22, 1, 0.36, 1) calc(75ms * var(--order))
+    ;
 }
+
+#s2.body-container-visible .about-card {
+  scale: 1;
+  rotate: 0deg;
+}
+
 .about-card-grid .about-card:hover {
   transform: translateY(-10px) rotate(0.5deg);
   background-color: rgb(var(--color-graphene3));
@@ -360,6 +377,11 @@
 .background-modules {
   filter: drop-shadow(0px 4px 17px rgba(0, 0, 0, 0.5));
   z-index: -101;
+  translate: 50%;
+  transition: translate 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#s3.body-container-visible .background-modules {
+  translate: 0;
 }
 
 @media only screen and (max-width: 1600px) {
@@ -452,13 +474,23 @@
 #s4 img {
   max-width: 256px;
   max-height: 256px;
+  transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 #s4 h1 {
   font-size: 3rem;
-  display: block;
 }
 
-#s4 p {
+#s4 h1, #s4 p {
   display: block;
+  translate: 50%;
+  transition: translate 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#s4.body-container-visible img {
+  animation: shubanim 3s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
+}
+
+#s4.body-container-visible h1, #s4.body-container-visible p {
+  translate: 0;
 }
