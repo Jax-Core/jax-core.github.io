@@ -320,8 +320,7 @@ img {
 .body-divider {
   width: 100%;
   height: var(--padding-max);
-  padding: calc(var(--padding-max) / 2) var(--padding-side) 0
-    var(--padding-side);
+  padding: calc(var(--padding-max) / 2) var(--padding-side) 0 var(--padding-side);
 }
 
 .body-divider hr {
@@ -333,7 +332,7 @@ img {
 /* -------------------------------------------------------------------------- */
 
 .body-container {
-  width: 100%;
+  width: 100vw;
   min-height: calc(100vh - var(--padding-max) * 2 + 1px);
   height: max-content;
   display: flex;
@@ -342,6 +341,7 @@ img {
   padding: 0px var(--padding-max);
   opacity: 0;
   transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-x: hidden;
 }
 
 .body-container-visible {
