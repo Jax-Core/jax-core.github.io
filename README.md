@@ -1,2 +1,2 @@
 # JaxCore.app
-Repository for JaxCore's website
+Legacy Repository for JaxCore's website. Now hosted to Vercel with NextJS.
