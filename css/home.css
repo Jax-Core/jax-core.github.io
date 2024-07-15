@@ -53,7 +53,8 @@
 }
 
 .header-content p {
-  animation: slideInFromLeft 0.5s cubic-bezier(0, 0.55, 0.45, 1) 0.2s 1 normal both;
+  animation: slideInFromLeft 0.5s cubic-bezier(0, 0.55, 0.45, 1) 0.2s 1 normal
+    both;
   opacity: 0;
   font-size: 1.25rem;
 }
@@ -205,11 +206,9 @@
   padding: 20px;
   gap: 10px;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-    background-color 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
-    opacity 0.1s linear,
+    background-color 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.1s linear,
     scale 1s cubic-bezier(0.22, 1, 0.36, 1) calc(75ms * var(--order)),
-    rotate 1s cubic-bezier(0.22, 1, 0.36, 1) calc(75ms * var(--order))
-    ;
+    rotate 1s cubic-bezier(0.22, 1, 0.36, 1) calc(75ms * var(--order));
 }
 
 #s2.body-container-visible .about-card {
@@ -344,7 +343,7 @@
 }
 .module-array-img:hover {
   transform: scale(1.05);
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .module-array-img-selected {
   transform: scale(1.1);
@@ -361,10 +360,9 @@
   opacity: 1;
 }
 #modules-interactive-info.toLeft {
-    transform: translateX(-20px);
-    opacity: 0;
+  transform: translateX(-20px);
+  opacity: 0;
 }
-
 
 #modules-interactive-info img {
   border-radius: calc(var(--rounding-size) / 2);
@@ -391,7 +389,7 @@
   translate: 0;
 }
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1200px) {
   #s3 {
     padding: 0px var(--padding-max);
     justify-content: center;
@@ -450,15 +448,14 @@
     padding: 0;
   }
 
-  
-    #modules-interactive-info {
-        width: 100%;
-        display: flex;
-        gap: 30px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  #modules-interactive-info {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
   #modules-interactive-info > div {
     width: 100%;
@@ -488,7 +485,8 @@
   font-size: 3rem;
 }
 
-#s4 h1, #s4 p {
+#s4 h1,
+#s4 p {
   display: block;
   translate: 50%;
   transition: translate 1s cubic-bezier(0.22, 1, 0.36, 1);
@@ -498,7 +496,8 @@
   animation: shubanim 3s cubic-bezier(0.76, 0, 0.24, 1) 0ms infinite;
 }
 
-#s4.body-container-visible h1, #s4.body-container-visible p {
+#s4.body-container-visible h1,
+#s4.body-container-visible p {
   translate: 0;
 }
 
